@@ -1,7 +1,7 @@
  # Práctica 0
 
 Toma de contacto, y pruebas varias.
+<b> Hermione is back <b>
 <br>
-![](Ejercicio2-img1.gif)
+![](hermione1c.png)
 <br>
-![](Ejercicio2-img2.jpg)
