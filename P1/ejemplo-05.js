@@ -13,3 +13,5 @@ for (i in a) {
 
 //-- Imprimir el numero total de elementos
 console.log("Cantidad de elementos: " + a.length);
+a.length
+a.reverse()
