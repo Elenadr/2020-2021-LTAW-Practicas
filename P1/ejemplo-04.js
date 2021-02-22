@@ -30,6 +30,9 @@ for (prop in objeto1) {
     console.log(`Propiedad: ${prop} --> Valor: ${objeto1[prop]}`);
 }
 
+const nomb = objeto1.nombre;
+const val = objeto1.valor;
+console.log("Hola" + nomb + "tienes" + val)
 //-- Forma abreviada para obtener constantes
 //-- con las propiedades del objeto
 const { valor, nombre } = objeto1;
