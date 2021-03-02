@@ -7,16 +7,16 @@ const server = http.createServer((req, res) => {
 
   console.log("Petición recibida")
 
-  //-- Hayppy server. Generar respuesta
-  //-- Código: todo ok
-  res.statusCode = 200;
-  res.statusMessage = "OK :-)";
+  //-- Generar respuesta
+  //-- Código: Error. No encontrado
+  res.statusCode = 404;
+  res.statusMessage = "Not Found :-(";
   res.setHeader('Content-Type', 'text/plain');
-  res.write("Soy el happy server\n");
+  res.write("Soy el ANGRY Server\n");
   res.end()
 
 });
 
 server.listen(PUERTO);
 
-console.log("Ejemplo 4. Happy Server listo!. Escuchando en puerto: " + PUERTO);
+console.log("Ejemplo 5. Angry server!. Escuchando en puerto: " + PUERTO);
