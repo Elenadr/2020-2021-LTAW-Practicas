@@ -1,15 +1,16 @@
 //-- Importar el módulo FS
 const fs = require('fs');
 
-console.log("Lectura síncrona de un fichero");
+console.log("Lectura asíncrona de un fichero");
 
-//-- Realizar la lectura
-const data = fs.readFileSync('fich1.txt','utf8');
+//-- Realizar la lectura asíncrona
+fs.readFile('fich1.txt','utf8', (err, data) => {
 
-//-- Esta instrucción se ejecuta una vez terminada
-//-- la lectura síncrona
-console.log("Lectura completada...")
+    //-- Cuando los datos están ya disponibles
+    //-- los mostramos en la consola
+    console.log("Lectura completada...")
+    console.log("Contenido del fichero: \n")
+    console.log(data);
+});
 
-//-- Mostrar el contenido del fichero
-console.log("Contenido del fichero: \n")
-console.log(data);
+console.log("Esperando al sistema de ficheros...")
