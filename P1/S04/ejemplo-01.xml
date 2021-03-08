@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Declaracion de la gramatica -->
+<!--DOCTYPE tienda [
+    <!ELEMENT tienda (#PCDATA)>
+]-->
+
+<!-- Dentro del elemento tienda solo puede haber
+     cadenas de texto. Ninguna etiqueta -->
+<!-- estructura comentando Tienda es mi elemento raíz -->
+<tienda xmlns:t1="loquemedalagana__o__">
+    <!-- Demtrp de mi tienda hay productos-->
+    <producto>
+        Un producto
+    </producto>
+
+    <producto>
+        Oto producto
+    </producto>
+
+</tienda>
