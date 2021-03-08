@@ -4,14 +4,25 @@
 <!DOCTYPE tienda [
     <!ELEMENT tienda (producto+)>
     <!-- Si ponemos más, ya puedo poner m´s prodcuos-->
-    <!ELEMENT producto (#PCDATA)>
+    <!ELEMENT producto (nombre, descripcion?, stock)>
+    <!ELEMENT nombre (#PCDATA)>
+    <!ELEMENT descripcion (#PCDATA)>
+    <!ELEMENT stock (#PCDATA)>
 ]>
 
 <!-- Definimos uso del lenguaje-->
 <tienda>
-    <producto> Esto es un producot </producto>
+    <producto> 
+        <nombre>Varita Hermione</nombre>  
+        <descripcion>Fabricada en Ollivander</descripcion>  
+        <stock>2</stock>
+    </producto>
+    <producto>
+        <nombre>Varita Harry</nombre>
+       <!-- <descripcion>Pluma de fénix</descripcion>-->
+        <stock>9</stock>
+    </producto> 
    <!-- <producto>mo vales</producto> -->
-   <producto>Con la etiqueta más, puedo poener productos</producto>
-   <producto>pues pa lante</producto>
-   <producto>no está acotado</producto>
+   <!--<producto>Con la etiqueta más, puedo poener productos</producto> -->
+
 </tienda>
