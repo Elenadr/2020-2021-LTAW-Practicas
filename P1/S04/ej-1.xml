@@ -2,10 +2,16 @@
 
 <!-- Definimos lenguaje raiz-->
 <!DOCTYPE tienda [
-    <!ELEMENT tienda (#PCDATA)>
+    <!ELEMENT tienda (producto+)>
+    <!-- Si ponemos más, ya puedo poner m´s prodcuos-->
+    <!ELEMENT producto (#PCDATA)>
 ]>
 
 <!-- Definimos uso del lenguaje-->
 <tienda>
-    Esta es mi tienda
+    <producto> Esto es un producot </producto>
+   <!-- <producto>mo vales</producto> -->
+   <producto>Con la etiqueta más, puedo poener productos</producto>
+   <producto>pues pa lante</producto>
+   <producto>no está acotado</producto>
 </tienda>
