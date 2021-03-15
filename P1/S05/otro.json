@@ -1,0 +1,11 @@
+[
+    {
+      "nombre": "Varita Hermione",
+      "descripción": "Fabricada en Ollivander",
+      "stock": 2
+    },
+    {
+      "nombre": "Varita Harry",
+      "stock": 9
+    }
+  ]
