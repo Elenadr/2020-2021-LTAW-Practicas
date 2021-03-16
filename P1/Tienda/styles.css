@@ -1,0 +1,143 @@
+/* Documento de estilo referido al
+  currículum de Hermione. */
+
+@font-face
+{
+   font-family: "LUMOS";
+   src: url("LUMOS.ttf");
+}
+
+/* Uso font-face para poder usar las fuentes
+   descargadas de internet que quiero usar. */
+@font-face
+{
+   font-family: "HARRYP__";
+   src: url("HARRYP__.TTF");
+}
+
+/* Estilo del body, solo usado para background-image */
+body {
+  background-image: url("pergaminonew.png");
+}
+
+ /* Estilo del encabezado principal, osea del título */
+h1 {
+  font-family: "HARRYP__";
+  font-size: 50px;
+  text-align: center;
+  text-shadow:4px 4px grey;
+  border: #AA7700 10px double;
+  border-bottom: none;
+  padding: 10px;
+  margin: 50px;
+  margin-bottom: 0px;
+  }
+
+ /* Estilo del cuerpo, excluyendo el título*/
+ .cuerpo{
+    display: inline-flex;
+    padding: 0px;
+    margin: 50px;
+    border: #AA7700 10px double;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+/* Estilo de los títulos de apartados */
+.apartados{
+  font-family: "HARRYP__";
+  font-size: 35px;
+  border-bottom: #AA7700 10px double;
+  padding: 10px;
+  display: inline-flex;
+  width: 95%;
+  height: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  justify-content: center;
+  align-items: center;
+  text-shadow:2px 2px grey;
+  }
+
+/* Estilo de los bloques de texto*/
+.parrafos {
+  font-family: "LUMOS";
+  font-size: 25px;
+  display: flex;
+  align-items: center;
+  margin: 10px;
+  padding: 0px;
+  text-align: justify;
+  list-style-image: url("pluma1.png");
+}
+
+ /* Estilo de la caja lateral. */
+aside{
+  width: 30%;
+  border: #AA7700  10px double;
+  margin: 0px;
+  padding:15px;
+  text-align: justify;
+}
+
+/* Estilo del gif */
+.gif{
+  position: absolute;
+  left:260px;
+}
+
+/* Estilo de la imagen principal */
+.imagen{
+  float:inherit;
+  position:relative;
+  padding: 0px;
+  margin:0px;
+
+  right: 23px;
+}
+
+/* Estilo de las citas célebres */
+.frases{
+ font-family: "LUMOS";
+ font-size: 23px;
+ display: flex;
+ align-items: center;
+ padding: 0px;
+ text-align: justify;
+ font-style: italic;
+ list-style-image: url("pluma1.png");
+}
+
+ /* Estilo de la caja principal */
+main{
+  border: #AA7700  10px double;
+  margin-top: 0px;
+  padding: 10px;
+  background-image: url("marcaagua.png");
+  background-position: center;
+  background-repeat: repeat-x;
+  flex-wrap: wrap;
+}
+
+/* Estilo de las direcciones */
+address{
+  font-family: "LUMOS";
+  font-size: 20px;
+  text-align: center;
+  -webkit-column-count: 3; /* Chrome, Safari, Opera */
+  -moz-column-count: 3; /* Firefox */
+  column-count: 3; /* Para visualizar las tres columnas */
+  margin-top: 20px;
+}
+
+/* Estilo del pie de página */
+footer{
+ align-self: flex-end;
+ margin:10px;
+ padding: 0px;
+ text-align: center;
+ margin-right: 50px;
+ opacity: 50%;
+
+}
