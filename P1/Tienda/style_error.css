@@ -1,0 +1,102 @@
+/* Documento de estilo P5 Elena del Rio */
+
+@font-face
+{
+  font-family: "HARRYP__";
+  src: url("HARRYP__.TTF");
+}
+
+body{
+  background-color:#d2bfa1;
+  font-family: "HARRYP__";
+}
+
+img{
+  border: #533E03 8px solid;
+}
+
+h1{
+  font-size: 70px;
+  text-align: center;
+  padding: 10px;
+  margin: 50px;
+  margin-bottom: 0px;
+  color:#A98727;
+  text-shadow:#CEAB46 9px 0;
+  -webkit-text-stroke: 1.5px #533E03;
+}
+
+h2{
+  font-size: 70px;
+  text-align: center;
+  padding: 10px;
+  margin: 50px;
+  margin-bottom: 0px;
+  color:#A98727;
+  text-shadow:#CEAB46 5px 0;
+  -webkit-text-stroke: 1.5px #533E03;
+}
+
+p{
+  color:#533E03;
+}
+
+canvas{
+  margin-top: 70px;
+  border: #533E03 8px solid;
+  width: 616px;
+}
+
+.up{
+  text-align:center;
+}
+
+.down{
+  text-align:center;
+}
+
+.transformada{
+  margin-left: 20px;
+}
+
+.deslizadores{
+  float: right;
+  margin-left: 0px;
+  padding-top: 100px;
+  padding-right: 150px;
+  padding-left: 0px;
+}
+
+button{
+  font-family: "HARRYP__";
+  background-color: #533E03;
+  color: white;
+  padding: 15px 32px;
+  text-decoration: none;
+  font-size: 30px;
+  border-radius: 15px;
+  border-width: 3px;
+  border-color: white;
+  margin-left: 30px;
+  margin-right: 50px;
+}
+
+button:hover {
+  background-color:silver;
+  color: #533E03 ;
+  border-color:  #533E03;
+  border-width: 3px;
+}
+
+footer{
+ align-self: flex-end;
+ margin:10px;
+ padding: 0px;
+ text-align: center;
+ margin-right: 50px;
+}
+#extra{
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}

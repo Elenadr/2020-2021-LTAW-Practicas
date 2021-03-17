@@ -14,7 +14,10 @@
    font-family: "HARRYP__";
    src: url("HARRYP__.TTF");
 }
-
+head
+{
+  background-image: url("pergaminonew.png");
+}
 /* Estilo del body, solo usado para background-image */
 body {
   background-image: url("pergaminonew.png");
