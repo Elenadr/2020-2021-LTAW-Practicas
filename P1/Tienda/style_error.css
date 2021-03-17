@@ -1,10 +1,6 @@
 /* Documento de estilo P5 Elena del Rio */
 
-@font-face
-{
-  font-family: "HARRYP__";
-  src: url(https://github.com/Elenadr/2020-2021-LTAW-Practicas/blob/main/P1/wiki/HARRYP__.TTF);
-}
+@import url("https://github.com/Elenadr/2020-2021-LTAW-Practicas/blob/main/P1/wiki/HARRYP__.TTF");
 
 body{
   background-color:#d2bfa1;
