@@ -4,7 +4,7 @@
 const fs = require('fs');
 
 //-- Nombre del fichero JSON que queremos leer
-const FICHERO_JSON = "tienda.json"
+const FICHERO_JSON = "newtienda.json"
 //-- Leemos el fichero JSON
 const  tienda_json = fs.readFileSync(FICHERO_JSON);
 
