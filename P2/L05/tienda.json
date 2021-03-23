@@ -27,13 +27,13 @@
       {
         "nombre": "Imán",
         "cantidad": 2,
-        "dirección": "Avenida principal, Hogsmeade",
+        "direccion": "Avenida principal, Hogsmeade",
         "importe":"12 euros"
       },
       {
         "nombre": "Varita",
         "cantidad": "10",
-        "dirección": "Callejón Diagon, Cajero Armazón",
+        "direccion": "Callejón Diagon, Cajero Armazón",
         "importe": "30 euros"
       }
     ]
