@@ -1,0 +1,40 @@
+{
+    "usuarios":[{
+      "nombre":"Harry",
+      "real": "Daniel",
+      "email": "Harryp@gmail.com"
+    },
+    {
+      "nombre":"Hermine",
+      "real": "Enma",
+      "email": "hermione@gmail.com"
+    }],
+    "productos":[
+      {
+        "nombre":"Varita",
+        "stock": "30"
+      },
+      {
+        "nombre":"Llavero",
+        "stock": "23"  
+      },
+      {
+        "nombre":"Imán",
+        "stock": "99"
+      }
+    ],
+    "pedidos":[
+      {
+        "nombre": "Imán",
+        "cantidad": 2,
+        "dirección": "Avenida principal, Hogsmeade",
+        "importe":"12 euros"
+      },
+      {
+        "nombre": "Varita",
+        "cantidad": "10",
+        "dirección": "Callejón Diagon, Cajero Armazón",
+        "importe": "30 euros"
+      }
+    ]
+  }
