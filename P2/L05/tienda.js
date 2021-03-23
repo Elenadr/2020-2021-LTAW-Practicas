@@ -24,6 +24,6 @@ tienda.productos.forEach((element, productos)=>{
 }); 
 console.log("Pedidos pendientes: " + tienda.pedidos.length);
 tienda.pedidos.forEach((element, pedidos)=>{
-    console.log("Detalles pedido: " + (pedidos + 1) + ": " + element["nombre"] +" Cantidad para enviar: "+ element["cantidad"] + " Dirección: " + element["direccion"]);
+    console.log("Detalles pedido: " + (pedidos + 1) + ": " + element["nombre"] +" Cantidad para enviar: "+ element["cantidad"] + " Dirección: " + element["direccion"] +" Importe: " + element["importe"]);
 });
 
