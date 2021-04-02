@@ -17,6 +17,7 @@
 head
 {
   background-image: url("pergaminonew.png");
+  background-color: black;
 }
 /* Estilo del body, solo usado para background-image */
 body {
