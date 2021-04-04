@@ -43,11 +43,16 @@ const server = http.createServer((req, res)=>{
           }
         });
       } else {
-        
+        res.statusCode = 404;
+        res.statusMessage = "Not Found :-(";
         res.writeHead(404, {'Content-Type': 'text/html'});
-        camino='pages/trol.html';	
+        code = 404;
+        code_msg = "Not Found";
+        camino = 'pages/trol.html'; 
         res.end();
+
       }
+      
     });
 
 });

@@ -14,15 +14,13 @@
    font-family: "HARRYP__";
    src: url("HARRYP__.TTF");
 }
-head
+body
 {
-  background-image: url("pergaminonew.png");
-  background-color: black;
+
+  background-color: #0a0d21;
+  background-image: ;
 }
 /* Estilo del body, solo usado para background-image */
-body {
-  background-image: url("pergaminonew.png");
-}
 
  /* Estilo del encabezado principal, osea del título */
 h1 {
