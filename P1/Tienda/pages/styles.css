@@ -16,7 +16,10 @@
 }
 body
 {
-  background: url('https://raw.githubusercontent.com/Elenadr/2020-2021-LTAW-Practicas/main/P1/wiki/fondo.jpg'), #0a0d21;
+  background-color: #0a0d21;
+  background-image: url('https://raw.githubusercontent.com/Elenadr/2020-2021-LTAW-Practicas/main/P1/wiki/1.png');
+  background-repeat: repeat;
+  background-size: 100px 200px;;
 }
 /* Estilo del body, solo usado para background-image */
 
@@ -26,8 +29,6 @@ h1 {
   font-size: 50px;
   text-align: center;
   text-shadow:4px 4px grey;
-  border: #AA7700 10px double;
-  border-bottom: none;
   padding: 10px;
   margin: 50px;
   margin-bottom: 0px;
