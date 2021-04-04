@@ -16,9 +16,7 @@
 }
 body
 {
-
-  background-color: #0a0d21;
-  background-image: url("https://raw.githubusercontent.com/Elenadr/2020-2021-LTAW-Practicas/main/P1/wiki/fondo.jpg");
+  background: url('https://raw.githubusercontent.com/Elenadr/2020-2021-LTAW-Practicas/main/P1/wiki/fondo.jpg'), #0a0d21;
 }
 /* Estilo del body, solo usado para background-image */
 
