@@ -14,131 +14,87 @@
    font-family: "HARRYP__";
    src: url("HARRYP__.TTF");
 }
-body
-{
+body {
+  margin: 0;
+  padding: 0px 0 0 0;
+  top: 0;
   background-color: #0a0d21;
-  background-image: url('https://raw.githubusercontent.com/Elenadr/2020-2021-LTAW-Practicas/main/P1/wiki/11.png');
-  background-repeat: repeat;
-  background-size: 500px 200px;;
 }
+
+#page {
+  margin: 0px auto;
+  width: 100%;
+  background-color: #0a0d21;
+}
+/* Style the header with a grey background and some padding */
+header{
+  /* Enable flex mode. */
+  display: flex; 
+  
+  /* Spread out the elements inside the header. */
+  justify-content: space-between;
+
+  /* Align items vertically in the center. */
+  align-items: center;
+  background-color: #0a0d21;
+}
+
+/* Add media queries for responsiveness - when the screen is 500px wide or less, stack the links on top of each other */
+@media (max-width: 1000px){
+  header{
+          /* Reverse the axis of the header, making it vertical. */
+          flex-direction: column;
+          
+          /* Align items to the begining (the left) of the header. */
+          align-items: flex-start;
+  }
+  
+}
+#cuerpo{
+  font-family: "HARRYP__";
+  src: url("HARRYP__.TTF");
+  background-color: #0a0d21;
+  /*background-image: url('https://raw.githubusercontent.com/Elenadr/2020-2021-LTAW-Practicas/main/P1/wiki/S1.png'); */ 
+  background-repeat: repeat;
+
+
+}
+
+
 /* Estilo del body, solo usado para background-image */
 
  /* Estilo del encabezado principal, osea del título */
-h1 {
+h3 {
   font-family: "HARRYP__";
   font-size: 50px;
   text-align: center;
   text-shadow:4px 4px grey;
   padding: 10px;
-  margin: 50px;
-  margin-bottom: 0px;
-  }
-
- /* Estilo del cuerpo, excluyendo el título*/
- .cuerpo{
-    display: inline-flex;
-    padding: 0px;
-    margin: 50px;
-    border: #AA7700 10px double;
-    margin-top: 0px;
-    margin-bottom: 0px;
-  }
-
-/* Estilo de los títulos de apartados */
-.apartados{
-  font-family: "HARRYP__";
-  font-size: 35px;
-  border-bottom: #AA7700 10px double;
-  padding: 10px;
-  display: inline-flex;
-  width: 95%;
-  height: 30px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 10px;
-  justify-content: center;
-  align-items: center;
-  text-shadow:2px 2px grey;
-  }
-
-/* Estilo de los bloques de texto*/
-.parrafos {
-  font-family: "LUMOS";
-  font-size: 25px;
-  display: flex;
-  align-items: center;
-  margin: 10px;
-  padding: 0px;
-  text-align: justify;
-  list-style-image: url("pluma1.png");
-}
-
- /* Estilo de la caja lateral. */
-aside{
-  width: 30%;
-  border: #AA7700  10px double;
+  color: #d4ac0d;
+  opacity: 0.5;
   margin: 0px;
-  padding:15px;
-  text-align: justify;
-}
+  background-color: #0a0d21;
+  }
 
-/* Estilo del gif */
-.gif{
-  position: absolute;
-  left:260px;
-}
-
-/* Estilo de la imagen principal */
-.imagen{
-  float:inherit;
-  position:relative;
-  padding: 0px;
-  margin:0px;
-
-  right: 23px;
-}
-
-/* Estilo de las citas célebres */
-.frases{
- font-family: "LUMOS";
- font-size: 23px;
- display: flex;
- align-items: center;
- padding: 0px;
- text-align: justify;
- font-style: italic;
- list-style-image: url("pluma1.png");
-}
-
- /* Estilo de la caja principal */
-main{
-  border: #AA7700  10px double;
-  margin-top: 0px;
-  padding: 10px;
-  background-image: url("marcaagua.png");
-  background-position: center;
-  background-repeat: repeat-x;
-  flex-wrap: wrap;
-}
-
-/* Estilo de las direcciones */
-address{
-  font-family: "LUMOS";
-  font-size: 20px;
+p{
+  font-family: "HARRYP__";
   text-align: center;
-  -webkit-column-count: 3; /* Chrome, Safari, Opera */
-  -moz-column-count: 3; /* Firefox */
-  column-count: 3; /* Para visualizar las tres columnas */
-  margin-top: 20px;
+  font-size: 30px;
+  color: #d4ac0d;
+  opacity: 0.5;
 }
+
 
 /* Estilo del pie de página */
 footer{
  align-self: flex-end;
- margin:10px;
+
  padding: 0px;
  text-align: center;
- margin-right: 50px;
+ 
  opacity: 50%;
+ background-color: #0a0d21;
 
 }
+
+
