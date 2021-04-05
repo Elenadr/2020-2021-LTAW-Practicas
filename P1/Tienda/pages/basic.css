@@ -17,10 +17,14 @@
     padding: 0px 0 0 0;
     top: 0;
     background-color: #00020a;
+
   }
-  
+ 
   /* Style the header */
-  header{
+  #header{
+
+    background-image: url("https://raw.githubusercontent.com/Elenadr/2020-2021-LTAW-Practicas/main/P1/wiki/head1.png");
+
     /* Enable flex mode. */
     display: flex; 
     
@@ -29,13 +33,14 @@
   
     /* Align items vertically in the center. */
     align-items: center;
-    background-image: url("https://raw.githubusercontent.com/Elenadr/2020-2021-LTAW-Practicas/main/P1/Tienda/pages/head.png");
+
+
 
   }
   
   /* Add media queries for responsiveness - when the screen is 500px wide or less, stack the links on top of each other */
   @media (max-width: 1000px){
-    header{
+    #header{
             /* Reverse the axis of the header, making it vertical. */
             flex-direction: column;
             
@@ -50,7 +55,7 @@
     src: url("HARRYP__.TTF");
 
     background-repeat: repeat;
-    background-image: url("https://raw.githubusercontent.com/Elenadr/2020-2021-LTAW-Practicas/main/P1/Tienda/pages/head.png");
+
 
   }
 
@@ -60,7 +65,7 @@
     src: url("HARRYP__.TTF");
     font-size: 55px;
     text-align: center;
-    padding: 10px;
+ background-image: url("https://raw.githubusercontent.com/Elenadr/2020-2021-LTAW-Practicas/main/P1/wiki/head1.png");
     opacity: 0.5;
     margin: 0px;
     color:#A98727;
@@ -68,13 +73,23 @@
     
   opacity: 0.5;
     }
-  
+  h5{
+    font-family: "HARRYP__";
+    src: url("HARRYP__.TTF");
+    font-size: 55px;
+    color:aliceblue;
+    margin: 0px;
+    text-align: center;
+
+
+  }
   p{
     font-family: "HARRYP__";
     text-align: center;
     font-size: 30px;
     color: #d4ac0d;
     opacity: 0.5;
+    margin: 0;
   }
   
   
@@ -82,7 +97,7 @@
   footer{
    align-self: flex-end;
   
-   padding: 0px;
+
    text-align: center;
    
    opacity: 50%;

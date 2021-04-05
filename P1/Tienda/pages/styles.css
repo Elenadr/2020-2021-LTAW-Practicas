@@ -22,16 +22,18 @@ body {
 }
 
 /* Style the header with a grey background and some padding */
-header{
+#header{
   /* Enable flex mode. */
   display: flex; 
-  
   /* Spread out the elements inside the header. */
   justify-content: space-between;
 
   /* Align items vertically in the center. */
   align-items: center;
-  background-color:#00020a;
+  background-image:url("https://raw.githubusercontent.com/Elenadr/2020-2021-LTAW-Practicas/main/P1/wiki/head1.png");
+  background-position-y: top;
+  background-repeat: repeat-y;
+  text-align: center;
 }
 
 /* Add media queries for responsiveness - when the screen is 500px wide or less, stack the links on top of each other */
@@ -55,8 +57,9 @@ header{
 
 }
 
-.subtiendas{
+#subtiendas{
   display: inline-block;
+  align-items: center;
   
 }
 
@@ -71,7 +74,7 @@ h3 {
   padding: 10px;
   color: #d4ac0d;
   opacity: 0.5;
-  margin: 0px;
+  margin: auto;
   background-color:#00020a;
   }
 
@@ -83,13 +86,32 @@ p{
   opacity: 0.5;
 }
 
-.subtienda1 {
+#subtienda1 {
   width: 200px;
   border: 42px solid black;
   border-image-width: 1;
   border-image-source: url(https://i.imgur.com/YC5PUl6.png);
   border-image-slice: 23%;
   border-image-repeat: round;
+  float: left;
+}
+#subtienda2 {
+  width: 200px;
+  border: 42px solid black;
+  border-image-width: 1;
+  border-image-source: url(https://i.imgur.com/YC5PUl6.png);
+  border-image-slice: 23%;
+  border-image-repeat: round;
+  float: left;
+}
+#subtienda3 {
+  width: 200px;
+  border: 42px solid black;
+  border-image-width: 1;
+  border-image-source: url(https://i.imgur.com/YC5PUl6.png);
+  border-image-slice: 23%;
+  border-image-repeat: round;
+  float: left;
 }
 /* Estilo del pie de página */
 footer{
