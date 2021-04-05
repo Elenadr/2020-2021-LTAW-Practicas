@@ -29,8 +29,7 @@
   
     /* Align items vertically in the center. */
     align-items: center;
-    background-color: #00020a ;
-    background-image: url("head.png");
+    background-image: url("https://raw.githubusercontent.com/Elenadr/2020-2021-LTAW-Practicas/main/P1/Tienda/pages/head.png");
 
   }
   
@@ -51,6 +50,8 @@
     src: url("HARRYP__.TTF");
 
     background-repeat: repeat;
+    background-image: url("https://raw.githubusercontent.com/Elenadr/2020-2021-LTAW-Practicas/main/P1/Tienda/pages/head.png");
+
   }
 
    /* Estilo del encabezado principal, osea del título */
