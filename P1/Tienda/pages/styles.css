@@ -84,7 +84,14 @@ p{
   opacity: 0.5;
 }
 
-
+.subtienda1 {
+  width: 200px;
+  border: 42px solid black;
+  border-image-width: 1;
+  border-image-source: url(https://i.imgur.com/YC5PUl6.png);
+  border-image-slice: 23%;
+  border-image-repeat: round;
+}
 /* Estilo del pie de página */
 footer{
  align-self: flex-end;
