@@ -54,28 +54,22 @@ body {
   font-family: "HARRYP__";
   src: url("HARRYP__.TTF");
   background-color:#00020a;
-  /*background-image: url('https://raw.githubusercontent.com/Elenadr/2020-2021-LTAW-Practicas/main/P1/wiki/S1.png'); */ 
   background-repeat: repeat;
-
-
 }
 
 #subtiendas{
   display: inline-block;
   align-items: center;
-  
 }
-
-/* Estilo del body, solo usado para background-image */
 
  /* Estilo del encabezado principal, osea del título */
 h3 {
   font-family: "HARRYP__";
   font-size: 50px;
   text-align: center;
-  text-shadow:4px 4px grey;
+  text-shadow:1px 1px lightgrey;
   padding: 10px;
-  color: #d4ac0d;
+  color:#a85;
   opacity: 0.5;
   margin: auto;
   background-color:#00020a;
@@ -85,35 +79,20 @@ p{
   font-family: "HARRYP__";
   text-align: center;
   font-size: 30px;
-  color: #d4ac0d;
+  color:#a85;
   opacity: 0.5;
 }
 
 #subtienda1 {
-  width: 200px;
-  border: 42px solid black;
-  border-image-width: 1;
-  border-image-source: url(https://i.imgur.com/YC5PUl6.png);
-  border-image-slice: 23%;
-  border-image-repeat: round;
+
   float: left;
 }
 #subtienda2 {
-  width: 200px;
-  border: 42px solid black;
-  border-image-width: 1;
-  border-image-source: url(https://i.imgur.com/YC5PUl6.png);
-  border-image-slice: 23%;
-  border-image-repeat: round;
+
   float: left;
 }
 #subtienda3 {
-  width: 200px;
-  border: 42px solid black;
-  border-image-width: 1;
-  border-image-source: url(https://i.imgur.com/YC5PUl6.png);
-  border-image-slice: 23%;
-  border-image-repeat: round;
+
   float: left;
 }
 /* Estilo del pie de página */
