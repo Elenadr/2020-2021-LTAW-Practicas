@@ -24,7 +24,7 @@ body {
 /* Style the header with a grey background and some padding */
 #header{
   /* Enable flex mode. */
-  display: flex; 
+  display: block; 
   /* Spread out the elements inside the header. */
   justify-content: space-between;
 
@@ -51,7 +51,7 @@ body {
   
 }
 #menuhead{
-  
+  float: right;
 }
 #cuerpo{
   font-family: "HARRYP__";
@@ -70,7 +70,7 @@ h3 {
   font-family: "HARRYP__";
   font-size: 50px;
   text-align: center;
-  padding: 10px;
+
   color:#a85;
   margin: auto;
 
