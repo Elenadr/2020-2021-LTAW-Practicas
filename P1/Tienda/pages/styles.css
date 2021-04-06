@@ -30,10 +30,13 @@ body {
 
   /* Align items vertically in the center. */
   align-items: center;
-  background-image:url("https://raw.githubusercontent.com/Elenadr/2020-2021-LTAW-Practicas/main/P1/wiki/head1.png");
-  background-position-y: top;
-  background-repeat: repeat-y;
+  background-image:url("https://raw.githubusercontent.com/Elenadr/2020-2021-LTAW-Practicas/main/P1/wiki/humo.png");
+  background-position:top;
+  background-size: contain;
+  background-repeat: no-repeat;
   text-align: center;
+
+  height: 220px;
 }
 
 /* Add media queries for responsiveness - when the screen is 500px wide or less, stack the links on top of each other */
