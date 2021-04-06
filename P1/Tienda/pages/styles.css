@@ -50,6 +50,9 @@ body {
   }
   
 }
+#menuhead{
+  
+}
 #cuerpo{
   font-family: "HARRYP__";
   src: url("HARRYP__.TTF");
@@ -78,7 +81,7 @@ p{
   text-align: center;
   font-size: 30px;
   color:#a85;
-  opacity: 0.5;
+
 }
 
 #subtienda1 {
