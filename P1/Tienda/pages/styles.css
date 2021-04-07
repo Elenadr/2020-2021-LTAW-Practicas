@@ -56,7 +56,7 @@ body {
   float: right;
   margin-right: 70px;
 }
-#cuerpo{
+#particles{
   font-family: "HARRYP__";
   src: url("HARRYP__.TTF");
   background-color:#00020a;
@@ -65,17 +65,17 @@ body {
 
 #subtiendas{
 
-  text-align: center;
+
   display:flex;
   width: 1200px;
   margin: auto;
+  justify-content: space-between;
 }
 #ollivander{
   position: relative;
-  margin-left: 10px;
-  margin-right: 10px;
+  
   text-align: center;
-  padding: 10px;
+
 }
 #quidditch{
   position: relative;
