@@ -70,7 +70,7 @@ body {
 
  /* Estilo del encabezado principal, osea del título */
 h3 {
-  font-family: "HARRYP__";
+  font-family: "LUMOS";
   font-size: 50px;
   text-align: center;
 
@@ -80,7 +80,7 @@ h3 {
   }
 
 h6{
-  font-family: "HARRYP__";
+  font-family: "LUMOS";
   text-align: center;
   font-size: 30px;
   color:#a85;
@@ -91,6 +91,7 @@ p{
   font-family: "LUMOS";
   font-size: 30px;
   color: white;
+  margin: 15px;
 
 }
 #subtienda1 {
