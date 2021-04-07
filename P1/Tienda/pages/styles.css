@@ -124,7 +124,17 @@ p{
 
 #logo{
   text-align: center;
+  bottom: 0px;
 }
+h2 {
+  font-family: "HARRYP__";
+  font-size: 30px;
+  text-align: center;
+
+  color:#a85;
+  margin: auto;
+
+  }
 /* Estilo del pie de página */
 footer{
  align-self: flex-end;
