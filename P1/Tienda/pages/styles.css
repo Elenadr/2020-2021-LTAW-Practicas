@@ -51,7 +51,10 @@ body {
   
 }
 #menuhead{
+
+  display:inline-flex;
   float: right;
+  margin-right: 70px;
 }
 #cuerpo{
   font-family: "HARRYP__";
@@ -76,14 +79,20 @@ h3 {
 
   }
 
-p{
+h6{
   font-family: "HARRYP__";
   text-align: center;
   font-size: 30px;
   color:#a85;
 
 }
+p{
 
+  font-family: "LUMOS";
+  font-size: 30px;
+  color: white;
+
+}
 #subtienda1 {
 
   float: left;
