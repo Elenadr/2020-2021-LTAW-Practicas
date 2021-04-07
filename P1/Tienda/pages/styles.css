@@ -122,6 +122,9 @@ p{
 
 }
 
+#logo{
+  float: right;
+}
 /* Estilo del pie de página */
 footer{
  align-self: flex-end;
