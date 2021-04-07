@@ -52,7 +52,7 @@ body {
 }
 #menuhead{
 
-  display:inline-flex;
+  display:flex;
   float: right;
   margin-right: 70px;
 }
@@ -117,7 +117,7 @@ p{
   font-family: "LUMOS";
   font-size: 30px;
   color: white;
-  margin: 15px;
+
 
 }
 
