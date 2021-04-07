@@ -123,14 +123,14 @@ p{
 }
 
 #logo{
-  float: right;
+  text-align: center;
 }
 /* Estilo del pie de página */
 footer{
  align-self: flex-end;
  padding: 0px;
  text-align: center;
- opacity: 50%;
+ 
  background-color:#00020a;
  background-image:url("https://raw.githubusercontent.com/Elenadr/2020-2021-LTAW-Practicas/main/P1/wiki/fit.png");
  background-repeat: no-repeat;
