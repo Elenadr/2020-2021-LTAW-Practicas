@@ -56,7 +56,8 @@ body {
   float: right;
   margin-right: 70px;
 }
-#particles{
+
+.particles{
   font-family: "HARRYP__";
   src: url("HARRYP__.TTF");
   background-color:#00020a;
@@ -71,20 +72,20 @@ body {
   margin: auto;
   justify-content: space-between;
 }
-#ollivander{
-  position: relative;
-  
-  text-align: center;
-
-}
-#quidditch{
+.ollivander{
   position: relative;
   margin-left: 10px;
   margin-right: 10px;
+  text-align: center;
 
+}
+.quidditch{
+
+  margin-left: 10px;
+  margin-right: 10px;
   text-align: center;
 }
-#honeydukes{
+.honeydukes{
   position: relative;
   margin-left: 10px;
   margin-right: 10px;
