@@ -64,8 +64,11 @@ body {
 }
 
 #subtiendas{
-  display: inline-block;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  grid-auto-rows: 100px 200px;
+  text-align: center;
 }
 
  /* Estilo del encabezado principal, osea del título */
@@ -84,7 +87,11 @@ h6{
   text-align: center;
   font-size: 30px;
   color:#a85;
+  margin-bottom: 0px;
 
+}
+img{
+  text-align: center;
 }
 p{
 
@@ -96,15 +103,23 @@ p{
 }
 #subtienda1 {
 
-  float: left;
+display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width:400px;
+
 }
 #subtienda2 {
 
-  float: left;
+  margin-left: auto;
+  margin-right: auto;
+
 }
 #subtienda3 {
 
-  float: left;
+  margin-left: auto;
+  margin-right: auto;
+
 }
 /* Estilo del pie de página */
 footer{
