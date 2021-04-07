@@ -64,13 +64,32 @@ body {
 }
 
 #subtiendas{
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 10px;
-  grid-auto-rows: 100px 200px;
+
+  text-align: center;
+  display:flex;
+  width: 1200px;
+  margin: auto;
+}
+#ollivander{
+  position: relative;
+  margin-left: 10px;
+  margin-right: 10px;
+  text-align: center;
+  padding: 10px;
+}
+#quidditch{
+  position: relative;
+  margin-left: 10px;
+  margin-right: 10px;
+
   text-align: center;
 }
-
+#honeydukes{
+  position: relative;
+  margin-left: 10px;
+  margin-right: 10px;
+  text-align: center;
+}
  /* Estilo del encabezado principal, osea del título */
 h3 {
   font-family: "HARRYP__";
@@ -101,26 +120,7 @@ p{
   margin: 15px;
 
 }
-#subtienda1 {
 
-display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width:400px;
-
-}
-#subtienda2 {
-
-  margin-left: auto;
-  margin-right: auto;
-
-}
-#subtienda3 {
-
-  margin-left: auto;
-  margin-right: auto;
-
-}
 /* Estilo del pie de página */
 footer{
  align-self: flex-end;
