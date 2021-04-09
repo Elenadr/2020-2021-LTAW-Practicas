@@ -14,6 +14,11 @@
    font-family: "HARRYP__";
    src: url("HARRYP__.TTF");
 }
+
+@font-face {
+  font-family: "FontAwesome";
+  src: url("fontawesome-webfont.woff");
+}
 body {
   margin: 0;
   padding: 0px 0 0 0;
@@ -37,7 +42,8 @@ body {
   background-repeat: no-repeat;
   text-align: center;
 
-  height: 220px;
+  max-width:100%;
+  height:auto;
 }
 
 /* Add media queries for responsiveness - when the screen is 500px wide or less, stack the links on top of each other */
@@ -52,10 +58,27 @@ body {
   
 }
 #menuhead{
-
+  font-family: "FontAwesome", sans-serif;
   display:flex;
   float: right;
   margin-right: 70px;
+}
+.fa-search{
+  margin-right: 10px;
+}
+.fa-search::before {
+  font-family: "FontAwesome", sans-serif;
+  content: "\f002";
+
+  font-size: 20px;
+}
+.fa-shopping-cart {
+  margin-right: 50px;
+}
+.fa-shopping-cart::before {
+  font-family: "FontAwesome", sans-serif;
+  content: "\f07a";
+  font-size: 20px;
 }
 
 #particles{
@@ -120,11 +143,9 @@ h6{
   margin-bottom: 0px;
 
 }
-img{
-  text-align: center;
-}
-p{
 
+p{
+  font-family: "FontAwesome", sans-serif;
   font-family: "LUMOS";
   font-size: 30px;
   color: white;
@@ -132,31 +153,222 @@ p{
 
 }
 
-#logo{
+
+#direccion{
+  font-family: "LUMOS";
   text-align: center;
-  bottom: 0px;
+  font-size: 20px;
+  color:#a85;
+  margin-bottom: 0px;
+
 }
 h2 {
   font-family: "HARRYP__";
-  font-size: 30px;
+  font-size: 35px;
   text-align: center;
 
   color:#a85;
   margin: auto;
 
   }
-/* Estilo del pie de página */
-footer{
- align-self: flex-end;
- padding: 0px;
- text-align: center;
 
- background-color:#00020a;
- background-image:url("https://raw.githubusercontent.com/Elenadr/2020-2021-LTAW-Practicas/main/P1/wiki/fit.png");
- background-repeat: no-repeat;
- background-position:bottom;
- text-align: center;
- height: 220px;
+/* Estilo del pie de página */
+
+footer{
+	position: fixed;
+	bottom: 0;
 }
 
+@media (max-height:800px){
+	footer { position: static; }
+	header { padding-top:40px; }
+}
+
+.footer-distributed{
+	background-color: #00020a;
+	box-sizing: border-box;
+	width: 100%;
+	text-align: left;
+	font: bold 16px sans-serif;
+	padding: 0px 50px 10px 50px;
+  max-height: 220px;
+}
+
+.footer-distributed .footer-left,
+.footer-distributed .footer-center,
+.footer-distributed .footer-right{
+	display: inline-block;
+	vertical-align: top;
+  margin: 10px
+}
+
+/* Footer left */
+
+.footer-distributed .footer-left{
+
+  text-align: center;
+}
+
+.footer-distributed h3{
+  font-family: "LUMOS";
+	color:  #ffffff;
+	font: normal 36px 'Cookie', cursive;
+	margin: 0;
+}
+
+/* The company logo */
+.footer-distributed .footer-left img{
+	width: 30%;
+}
+
+.footer-distributed h3 span{
+	color:  #a85;
+}
+
+/* Footer links */
+
+.footer-distributed .footer-links{
+	color:  #ffffff;
+	margin: 20px 0 12px;
+}
+
+.footer-distributed .footer-links a{
+	display:inline-block;
+	line-height: 1.8;
+	text-decoration: none;
+	color:  inherit;
+}
+
+.footer-distributed .footer-company-name{
+	color:  #8f9296;
+	font-size: 14px;
+	font-weight: normal;
+	margin: 0;
+}
+
+/* Footer Center */
+
+.footer-distributed .footer-center{
+	width: 45%;
+}
+
+.footer-distributed .footer-center .fa-location-arrow::before {
+  font-family: "FontAwesome", sans-serif;
+  content: "\f124";
+  font-size: 20px;
+}
+
+
+.footer-distributed .footer-center i{
+	background-color: #00020a;
+	color: #ffffff;
+	font-size: 25px;
+	width: 38px;
+	height: 38px;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 42px;
+	margin: 10px 15px;
+
+}
+
+.footer-distributed .footer-center .fa-envelope::before{
+  font-family: "FontAwesome", sans-serif;
+	font-size: 20px;
+
+  content: "\f199";
+}
+
+.footer-distributed .footer-center p{
+	display: inline-block;
+	color: #ffffff;
+	vertical-align: middle;
+	margin:0;
+}
+
+.footer-distributed .footer-center p span{
+	display:block;
+	font-weight: normal;
+	font-size:14px;
+	line-height:2;
+}
+
+.footer-distributed .footer-center p a{
+	color:   #a85;
+	text-decoration: none;
+}
+
+
+/* Footer Right */
+
+.footer-distributed .footer-right{
+	width: 30%;
+}
+
+.footer-distributed .footer-company-about{
+	line-height: 20px;
+	color:  #92999f;
+	font-size: 13px;
+	font-weight: normal;
+	margin: 0;
+}
+
+.footer-distributed .footer-company-about span{
+	display: block;
+	color:  #ffffff;
+	font-size: 18px;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+
+.footer-distributed .footer-icons .fa-github::before{
+  font-family: "FontAwesome", sans-serif;
+	font-size: 30px;
+  content: "\f09b";
+	margin-top: 25px;
+  color:  #ffffff;
+  font-style: normal;
+}
+.footer-distributed .footer-icons .fa-twitter::before{
+  font-family: "FontAwesome", sans-serif;
+	font-size: 30px;
+  content: "\f099";
+	margin-top: 25px;
+  color:  #ffffff;
+  font-style: normal;
+  background-color: blue;
+}
+
+.footer-distributed .footer-icons a{
+	display: inline-block;
+	width: 35px;
+	height: 35px;
+	cursor: pointer;
+	background-color: #00020a;
+	border-radius: 2px;
+
+	font-size: 20px;
+	color: #ffffff;
+	text-align: center;
+	line-height: 35px;
+
+	margin-right: 3px;
+	margin-bottom: 5px;
+}
+@media (max-width: 1000px) {
+
+	.footer-distributed .footer-left,
+	.footer-distributed .footer-center,
+	.footer-distributed .footer-right{
+		display: block;
+		width: 100%;
+		margin-bottom: 40px;
+		text-align: center;
+	}
+
+	.footer-distributed .footer-center i{
+		margin-left: 0;
+	}
+
+}
 
