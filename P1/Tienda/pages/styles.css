@@ -19,6 +19,7 @@ body {
   padding: 0px 0 0 0;
   top: 0;
   background-color:#00020a;
+  
 }
 
 /* Style the header with a grey background and some padding */
@@ -57,38 +58,47 @@ body {
   margin-right: 70px;
 }
 
-.particles{
+#particles{
   font-family: "HARRYP__";
   src: url("HARRYP__.TTF");
   background-color:#00020a;
   background-repeat: repeat;
+
 }
 
 #subtiendas{
 
-
-  display:flex;
-  width: 1200px;
-  margin: auto;
+  display: flex;
+  position: absolute;
+  top: 30%;
+  bottom: 50%;
+  left: 10%;
+  right: 10%;
+  margin: -25px -25px -25px -25px;
   justify-content: space-between;
+
+}
+.image{
+  max-width:100%;
+  height:auto;
 }
 .ollivander{
   position: relative;
-  margin-left: 10px;
-  margin-right: 10px;
-  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+
 
 }
 .quidditch{
+position: relative;
+margin-left: auto;
+margin-right: auto;
 
-  margin-left: 10px;
-  margin-right: 10px;
-  text-align: center;
 }
 .honeydukes{
   position: relative;
-  margin-left: 10px;
-  margin-right: 10px;
+  margin-left: auto;
+  margin-right: auto;
   text-align: center;
 }
  /* Estilo del encabezado principal, osea del título */
