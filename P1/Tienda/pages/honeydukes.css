@@ -87,7 +87,7 @@
      margin-right: 7px;
    }
    
-   #subescobas{ 
+   #subchuches{ 
      display: flex;
      position: absolute;
      top: 30%;
@@ -103,19 +103,25 @@
      height:auto;
    }
 
-   .bolas{
+   .butter{
      position: relative;
      margin-left: auto;
      margin-right: auto;
    }
 
-   .nimbus{
+   .frog{
      position: relative;
      margin-left: auto;
      margin-right: auto;
      text-align: center;
    }
-   
+   .bertie{
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+  
    
     /* Estilo del encabezado principal, osea del título */
    h3 {
