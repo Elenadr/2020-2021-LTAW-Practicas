@@ -83,7 +83,7 @@
      margin-right: 7px;
    }
    
-   #subtiendas{
+   #subvaritas{
    
      display: flex;
      position: absolute;
@@ -99,20 +99,20 @@
      max-width:100%;
      height:auto;
    }
-   .ollivander{
+   .harry_w{
      position: relative;
      margin-left: auto;
      margin-right: auto;
    
    
    }
-   .quidditch{
+   .hermione_w{
    position: relative;
    margin-left: auto;
    margin-right: auto;
    
    }
-   .honeydukes{
+   .dumbledore_w{
      position: relative;
      margin-left: auto;
      margin-right: auto;
