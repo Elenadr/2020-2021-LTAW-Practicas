@@ -1,14 +1,13 @@
-/* Documento de estilo referido al
-  currículum de Hermione. */
+/* Documento de estilo pagina principa de tienda */
 
+/* Uso font-face para poder usar las fuentes
+   descargadas de internet que quiero usar. */
 @font-face
 {
    font-family: "LUMOS";
    src: url("LUMOS.ttf");
 }
 
-/* Uso font-face para poder usar las fuentes
-   descargadas de internet que quiero usar. */
 @font-face
 {
    font-family: "HARRYP__";
@@ -19,6 +18,8 @@
   font-family: "FontAwesome";
   src: url("fontawesome-free-5.15.3-web/css/all.css");
 }
+
+/* Estilo del body */
 body {
   margin: 0;
   padding: 0px 0 0 0;
@@ -47,7 +48,7 @@ body {
 }
 
 /* Add media queries for responsiveness - when the screen is 500px wide or less, stack the links on top of each other */
-@media (max-width: 1000px){
+@media (max-width: 800px){
   header{
           /* Reverse the axis of the header, making it vertical. */
           flex-direction: column;
@@ -61,8 +62,11 @@ body {
   font-family: "fontawesome-free-5.15.3-web/css/all.css", sans-serif;
   display:flex;
   float: right;
-  margin-right: 70px;
-  
+  margin-right: 5%;
+  margin-top: 40px;
+}
+.menuhead-cart{
+  margin-right: 35px;
 }
 #header #menuhead p{
   margin: 20px;
@@ -79,22 +83,12 @@ body {
   margin-right: 7px;
 }
 
-
-
-#particles{
-  font-family: "HARRYP__";
-  src: url("HARRYP__.TTF");
-  background-color:#00020a;
-  background-repeat: repeat;
-
-}
-
 #subtiendas{
 
   display: flex;
   position: absolute;
-  top: 20%;
-  bottom: 50%;
+  top: 30%;
+  bottom: 40%;
   left: 10%;
   right: 10%;
   margin: -25px -25px -25px -25px;
@@ -152,32 +146,12 @@ p{
 }
 
 
-#direccion{
-  font-family: "LUMOS";
-  text-align: center;
-  font-size: 20px;
-  color:#a85;
-  margin-bottom: 0px;
-
-}
-h2 {
-  font-family: "HARRYP__";
-  font-size: 35px;
-  text-align: center;
-
-  color:#a85;
-  margin: auto;
-
-  }
-
 /* Estilo del pie de página */
-
 footer{
 	position: fixed;
 	bottom: 0;
 }
-
-@media (max-height:800px){
+@media (max-height:700px){
 	footer { position: static; }
 	header { padding-top:40px; }
 }
@@ -194,7 +168,6 @@ footer{
   font-family: "fontawesome-free-5.15.3-web/css/all.css", sans-serif;
 	padding: 0px 50px 10px 50px;
   max-height: 220px;
-  
 }
 
 .footer-distributed .footer-left,
@@ -325,14 +298,14 @@ footer{
 
 /*Responsive footer*/
 
-@media (max-width: 1000px) {
+@media (max-width: 880px) {
 
 	.footer-distributed .footer-left,
 	.footer-distributed .footer-center,
 	.footer-distributed .footer-right{
 		display: block;
 		width: 100%;
-		margin-bottom: 40px;
+		margin-bottom: 0px;
 		text-align: center;
     
 	}
