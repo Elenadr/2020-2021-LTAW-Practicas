@@ -17,7 +17,7 @@
 
 @font-face {
   font-family: "FontAwesome";
-  src: url("fontawesome-webfont.woff");
+  src: url("fontawesome-free-5.15.3-web/css/all.css");
 }
 body {
   margin: 0;
@@ -58,20 +58,15 @@ body {
   
 }
 #menuhead{
-  font-family: "FontAwesome", sans-serif;
+  font-family: "fontawesome-free-5.15.3-web/css/all.css", sans-serif;
   display:flex;
   float: right;
   margin-right: 70px;
 }
-.fa-search{
-  margin-right: 10px;
-}
-.fa-search::before {
-  font-family: "FontAwesome", sans-serif;
+#header #menuhead .fa-search::before{
   content: "\f002";
-
-  font-size: 20px;
 }
+
 .fa-shopping-cart {
   margin-right: 50px;
 }
@@ -189,7 +184,7 @@ footer{
 	box-sizing: border-box;
 	width: 100%;
 	text-align: left;
-	font: bold 16px sans-serif;
+  font-family: "FontAwesome", sans-serif;
 	padding: 0px 50px 10px 50px;
   max-height: 220px;
 }
@@ -253,13 +248,15 @@ footer{
 }
 
 .footer-distributed .footer-center .fa-location-arrow::before {
-  font-family: "FontAwesome", sans-serif;
+
   content: "\f124";
-  font-size: 20px;
+
 }
 
 
 .footer-distributed .footer-center i{
+  font-family: "FontAwesome", sans-serif;
+	font-size: 20px;
 	background-color: #00020a;
 	color: #ffffff;
 	font-size: 25px;
@@ -269,13 +266,9 @@ footer{
 	text-align: center;
 	line-height: 42px;
 	margin: 10px 15px;
-
 }
 
 .footer-distributed .footer-center .fa-envelope::before{
-  font-family: "FontAwesome", sans-serif;
-	font-size: 20px;
-
   content: "\f199";
 }
 
@@ -321,40 +314,37 @@ footer{
 	margin-bottom: 20px;
 }
 
-.footer-distributed .footer-icons .fa-github::before{
+.footer-distributed .footer-icons a{
   font-family: "FontAwesome", sans-serif;
 	font-size: 30px;
-  content: "\f09b";
+
 	margin-top: 25px;
   color:  #ffffff;
   font-style: normal;
+}
+.footer-distributed .footer-icons .fa-github::before{
+  content: "\f09b";
 }
 .footer-distributed .footer-icons .fa-twitter::before{
-  font-family: "FontAwesome", sans-serif;
-	font-size: 30px;
+
   content: "\f099";
-	margin-top: 25px;
-  color:  #ffffff;
-  font-style: normal;
-  background-color: blue;
+}
+.footer-distributed .footer-icons .fa-youtube::before{
+
+  content: "\f167";
+}
+.footer-distributed .footer-icons .fa-instagram::before{
+
+  content: "\f16d";
+}
+.footer-distributed .footer-icons .fa-linkedin::before{
+
+  content: "\f08c";
 }
 
-.footer-distributed .footer-icons a{
-	display: inline-block;
-	width: 35px;
-	height: 35px;
-	cursor: pointer;
-	background-color: #00020a;
-	border-radius: 2px;
 
-	font-size: 20px;
-	color: #ffffff;
-	text-align: center;
-	line-height: 35px;
 
-	margin-right: 3px;
-	margin-bottom: 5px;
-}
+
 @media (max-width: 1000px) {
 
 	.footer-distributed .footer-left,
