@@ -91,8 +91,9 @@
      bottom: 40%;
      left: 10%;
      right: 10%;
-     margin: -25px -25px -25px -25px;
+     margin: -45px -25px -25px -45px;
      justify-content: space-between;
+     margin-bottom: 10px;
    
    }
    .image{
@@ -126,7 +127,7 @@
     bottom: 40%;
     left: 10%;
     right: 10%;
-    margin: -25px -25px -25px -25px;
+    margin: -75px -25px -25px -45px;
     justify-content: space-between;
   }
 
@@ -181,10 +182,7 @@
    
    
    /* Estilo del pie de página */
-   footer{
-       position: fixed;
-       bottom: 0;
-   }
+
    @media (max-height:700px){
        footer { position: static; }
        header { padding-top:40px; }

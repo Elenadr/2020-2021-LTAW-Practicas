@@ -37,7 +37,7 @@
    
      /* Align items vertically in the center. */
      align-items: center;
-     background-image:url("https://raw.githubusercontent.com/Elenadr/2020-2021-LTAW-Practicas/main/P1/wiki/humutu.png");
+     background-image:url("https://raw.githubusercontent.com/Elenadr/2020-2021-LTAW-Practicas/main/P1/wiki/background-head.png");
      background-position:top;
      background-size:cover;
      background-repeat: no-repeat;
@@ -155,8 +155,8 @@ p a{
    }
    
    .footer-distributed{
-       background-color: #00020a;
-     background-image: url("https://raw.githubusercontent.com/Elenadr/2020-2021-LTAW-Practicas/main/P1/wiki/fit.png");
+    background-color: #00020a;
+    background-image: url("https://raw.githubusercontent.com/Elenadr/2020-2021-LTAW-Practicas/main/P1/wiki/background_foot.png");
      background-position:bottom;
      background-size:100%;
      background-repeat: no-repeat;
