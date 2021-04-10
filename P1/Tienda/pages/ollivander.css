@@ -118,6 +118,40 @@
      margin-right: auto;
      text-align: center;
    }
+   
+   #subvaritas2{
+    display: flex;
+    position: absolute;
+    top: 80%;
+    bottom: 40%;
+    left: 10%;
+    right: 10%;
+    margin: -25px -25px -25px -25px;
+    justify-content: space-between;
+  }
+
+  #varitas{
+      display: grid;
+      grid-row: 2;
+      grid-template-rows: repeat(2, 200px);
+  }
+  .ron_w{
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;  
+  }
+  .siriu_w{
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+  
+  }
+  .vol_w{
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+
+  }
     /* Estilo del encabezado principal, osea del título */
    h3 {
      font-family: "HARRYP__";
