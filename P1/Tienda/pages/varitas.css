@@ -84,16 +84,15 @@
    }
    
    #subvaritas{
-   
-     display: flex;
-     position: absolute;
-     top: 30%;
-     bottom: 40%;
-     left: 10%;
-     right: 10%;
-     margin: -45px -25px -25px -45px;
-     justify-content: space-between;
-     margin-bottom: 10px;
+
+     display: grid;
+     grid-template-columns: repeat(2, 1fr);
+     grid-template-rows: minmax(50px, auto);
+     grid-gap: 10px;
+     grid-auto-rows: 150px;
+     justify-items: center;
+     margin-left: 15%;
+     margin-top: 5%;
    
    }
    .image{
@@ -102,11 +101,35 @@
    }
    .harry_w{
      position: relative;
-     margin-left: auto;
-     margin-right: auto;
+
+     float: right;
    
    
    }
+   .text{
+
+       margin-left: 10%;
+    position: relative;
+
+   }
+   button{
+    font-family: "LUMOS";
+    background-color: #a85;
+    color: white;
+    padding: 15px 32px;
+    text-decoration: none;
+    font-size: 30px;
+    border-radius: 15px;
+    display:inline-block;
+    border-width: 3px;
+    border-color: white
+  }
+  button:hover {
+    background-color: white;
+    color: #CEAB46 ;
+    border-color:  #533E03;
+    border-width: 3px;
+  }
    .hermione_w{
    position: relative;
    margin-left: auto;
@@ -131,11 +154,7 @@
     justify-content: space-between;
   }
 
-  #varitas{
-      display: grid;
-      grid-row: 2;
-      grid-template-rows: repeat(2, 200px);
-  }
+
 
   .vol_w{
     position: relative;
@@ -156,20 +175,25 @@
    
    h6{
      font-family: "LUMOS";
-     text-align: center;
+
      font-size: 30px;
      color:#a85;
      margin-bottom: 0px;
    
    }
    
-   p{
+  #menuhead p{
      font-family: "fontawesome-free-5.15.3-web/css/all.css", sans-serif;
      font-family: "LUMOS";
      font-size: 30px;
      color: white;
    }
-   
+   p{
+    font-family: "fontawesome-free-5.15.3-web/css/all.css", sans-serif;
+    font-family: "LUMOS";
+    font-size: 25px;
+    color: white;
+  }
    
    /* Estilo del pie de página */
 
