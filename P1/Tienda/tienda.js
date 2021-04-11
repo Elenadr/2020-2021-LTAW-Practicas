@@ -48,7 +48,7 @@ const server = http.createServer((req, res)=>{
         res.writeHead(404, {'Content-Type': 'text/html'});
         code = 404;
         code_msg = "Not Found";
-        camino = 'pages/trol.html'; 
+        camino = 'pages/page_not_found.html'; 
         res.end();
 
       }

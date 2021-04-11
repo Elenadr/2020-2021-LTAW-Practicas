@@ -59,29 +59,22 @@
      
    }
    #menuhead{
-     font-family: "fontawesome-free-5.15.3-web/css/all.css", sans-serif;
-     display:flex;
-     float: right;
-     margin-right: 5%;
-     margin-top: 40px;
-   }
-   .menuhead-cart{
-     margin-right: 35px;
-   }
-   #header #menuhead p{
-     margin: 20px;
-   }
-   #header #menuhead .fa-search::before{
-     content: "\f002";
-     font-size: 25px;
-     margin-right: 7px;
-   }
-   
-   #header #menuhead .fa-shopping-cart::before {
-     content: "\f07a";
-     font-size: 25px;
-     margin-right: 7px;
-   }
+    font-family: "fontawesome-free-5.15.3-web/css/all.css", sans-serif;
+    display:flex;
+    float: right;
+    margin-right: 10%;
+    margin-top: 40px;
+  }
+  #menuhead a{
+    font-family: "fontawesome-free-5.15.3-web/css/all.css", sans-serif;
+    font-size: 30px;
+    margin-right: 20%;
+    color:  #ffffff;
+    font-style: normal;
+  }
+  #header #menuhead .menuhead-cart{
+    margin-right: 70%;
+  }
    
    #subvaritas{
    
