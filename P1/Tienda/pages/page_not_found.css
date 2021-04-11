@@ -162,7 +162,7 @@ p a{
      background-repeat: no-repeat;
        box-sizing: border-box;
        width: 100%;
-       text-align: left;
+       text-align: center;
      font-family: "fontawesome-free-5.15.3-web/css/all.css", sans-serif;
        padding: 0px 50px 10px 50px;
      max-height: 220px;
@@ -224,15 +224,15 @@ p a{
    
    /* Footer Center */
    
-   .footer-distributed .footer-center{
-       width: 55%;
+   .footer-distributed .footer-right{
+       width: 20%;
      text-align: center;
    }
    
-   .footer-distributed .footer-center p{
+   .footer-distributed .footer-right p{
      font-family: "fontawesome-free-5.15.3-web/css/all.css", sans-serif;
      font-family: "LUMOS";
-       font-size: 28px;
+       font-size: 18px;
        color: #ffffff;
        text-align: center;
      text-decoration: none;
@@ -242,29 +242,30 @@ p a{
        margin:0;
    }
    
-   .footer-distributed .footer-center a span{
+   .footer-distributed .footer-right a span{
        display:block;
        font-weight: normal;
-       font-size:20px;
+       font-size:18px;
        line-height:1.5;
      color: white;
      
    }
    
-   .footer-distributed .footer-center p a{
+   .footer-distributed .footer-right p a{
        color: #a85;
        text-decoration: none;
    }
-   .footer-distributed .footer-center .footer-mail p a{
+   .footer-distributed .footer-right .footer-mail p a{
        color:  #a85;
        text-decoration: none;
+       font-size: 23px;
      
    }
    
    /* Footer Right */
    
-   .footer-distributed .footer-right{
-       width: 15%;
+   .footer-distributed .footer-center{
+       width: 50%;
    }
    
    .footer-distributed .footer-company-about{
@@ -288,10 +289,11 @@ p a{
    .footer-distributed .footer-icons a{
      font-family: "fontawesome-free-5.15.3-web/css/all.css", sans-serif;
        font-size: 28px;
-     margin: 4px;
+       text-align: center;
        margin-top: 25px;
      color:  #ffffff;
      font-style: normal;
+     
    }
    
    /*Responsive footer*/

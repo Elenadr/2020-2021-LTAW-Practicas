@@ -68,20 +68,13 @@ body {
 .menuhead-cart{
   margin-right: 35px;
 }
-#header #menuhead p{
+.menuhead-lup{
+  margin-right: 35px;
+}
+ #menuhead p{
   margin: 20px;
 }
-#header #menuhead .fa-search::before{
-  content: "\f002";
-  font-size: 25px;
-  margin-right: 7px;
-}
 
-#header #menuhead .fa-shopping-cart::before {
-  content: "\f07a";
-  font-size: 25px;
-  margin-right: 7px;
-}
 
 #subtiendas{
 
