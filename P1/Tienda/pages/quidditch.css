@@ -90,8 +90,12 @@
      right: 10%;
      margin: 35px -25px -25px 0px;
      justify-content: space-between;
-
    }
+   #subescobas a{
+     font-style: normal;
+     text-decoration: none;
+   }
+
    .image{
      max-width:100%;
      height:auto;
@@ -141,7 +145,7 @@
    
  /* Estilo del pie de página */
 footer{
-  position: fixed;
+
   bottom: 0;
 }
 @media (max-height:700px){

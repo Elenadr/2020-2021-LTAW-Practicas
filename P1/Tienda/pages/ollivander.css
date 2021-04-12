@@ -89,6 +89,14 @@
      margin-bottom: 10px;
    
    }
+   #subvaritas a{
+    text-decoration: none;
+    font-style: normal;
+  }
+  #subvaritas2 a{
+    text-decoration: none;
+    font-style: normal;
+  }
    .image{
      max-width:100%;
      height:auto;
@@ -166,7 +174,7 @@
    
    /* Estilo del pie de página */
 footer{
-  position: fixed;
+
   bottom: 0;
 }
 @media (max-height:700px){
