@@ -3,6 +3,7 @@ const fs = require('fs');
 const url = require('url');
 
 
+
 const PUERTO = 9000;
 
 const mime = {
@@ -59,10 +60,12 @@ const server = http.createServer((req, res)=>{
                   throw error
               }
               console.log("Finalizando lectura");
-          console.log(files);
-          
+              console.log(files);
+              file=(files.toString());
+              res.writeHead(200, {'Content-Type': 'html'});
+              res.write(file);
+            res.end();
           });
-          
           console.log("iniciando lectura");
             
           }else{
