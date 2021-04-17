@@ -11,7 +11,8 @@ console.log(files);
 
 console.log("iniciando lectura");
 
-}else if(camino=='ls'){
+
+if(camino=='ls'){
     const vec = camino.split('.');
     fs.readdir("./pages", (error, files) => { 
       if(error){
@@ -23,3 +24,4 @@ console.log("iniciando lectura");
         res.write(files);
         res.end();
   });
+}
