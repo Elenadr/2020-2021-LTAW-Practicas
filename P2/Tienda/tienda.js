@@ -3,6 +3,7 @@ const fs = require('fs');
 const url = require('url');
 
 
+
 const PUERTO = 9000;
 
 const mime = {
@@ -25,7 +26,11 @@ const server = http.createServer((req, res)=>{
     let camino='pages'+objecturl.pathname;
     if (camino=='pages/')
       camino='pages/main.html';
+   
+    
+
     fs.stat(camino, error => {
+
       if (!error) {
 
         fs.readFile(camino, (error,contenido) => {
@@ -34,23 +39,43 @@ const server = http.createServer((req, res)=>{
             res.write('Error interno');
             res.end();					
           } else {
-          const vec = camino.split('.');
-          const extension=vec[vec.length-1];
-          const mimearchivo=mime[extension];
-          res.writeHead(200, {'Content-Type': 'mimearchivo'});
-          res.write(contenido);
-          res.end();
+            
+            const vec = camino.split('.');
+            const extension=vec[vec.length-1];
+            const mimearchivo=mime[extension];
+
+            res.writeHead(200, {'Content-Type': 'mimearchivo'});
+            res.write(contenido);
+            res.end();
+  
+
           }
         });
+      
       } else {
-        res.statusCode = 404;
-        res.statusMessage = "Not Found :-(";
-        res.writeHead(404, {'Content-Type': 'text/html'});
-        code = 404;
-        code_msg = "Not Found";
-        camino = 'pages/page_not_found.html'; 
-        res.end();
-
+        console.log(camino);
+          if(camino == 'pages/ls'){
+            fs.readdir("./pages", (error, files) => { 
+              if(error){
+                  throw error
+              }
+              console.log("Finalizando lectura");
+              console.log(files);
+              file=(files.toString());
+              res.writeHead(200, {'Content-Type': 'html'});
+              res.write(file);
+            res.end();
+          });
+          console.log("iniciando lectura");
+            
+          }else{
+            console.log("Recurso inexistente");
+            fs.readFile('pages/fail.html',(error,contenido) => {
+            res.writeHead(404, {'Content-Type': 'text/html'});
+            res.write(contenido);    
+            return res.end();
+          });
+        }
       }
       
     });

@@ -2,6 +2,7 @@ const http = require('http');
 const fs = require('fs');
 const url = require('url');
 
+const ls_OUT = "ls.html"
 
 
 const PUERTO = 9000;
@@ -54,6 +55,7 @@ const server = http.createServer((req, res)=>{
       
       } else {
         console.log(camino);
+        
           if(camino == 'pages/ls'){
             fs.readdir("./pages", (error, files) => { 
               if(error){
@@ -61,7 +63,8 @@ const server = http.createServer((req, res)=>{
               }
               console.log("Finalizando lectura");
               console.log(files);
-              file=(files.toString());
+            file=(files.toString());
+              fs.writeFileSync(ls_OUT, file);
               res.writeHead(200, {'Content-Type': 'html'});
               res.write(file);
             res.end();

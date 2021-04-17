@@ -1,0 +1,68 @@
+
+    {
+        "productos": [
+            {
+                "nombre": "Harry's wand",
+                "descripcion": "producto1",
+                "stock": "7"
+            },
+            {
+                "nombre": "Hermione's wand",
+                "descripcion": "producto2",
+                "stock": "9"
+            },
+            {
+                "nombre": "Dumbledore's wand",
+                "descripcion": "producto3",
+                "stock": "12"
+            },
+            {
+                "nombre": "Voldemort's wand",
+                "descripcion": "producto4",
+                "stock": "7"
+            }
+        ],
+    
+        "usuarios": [
+            {
+                "usuario": "root",
+                "email": "rootuser@magic.com"
+            },
+            {
+                "usuario": "hermione",
+                "email": "hermionegranger@magic.com"
+            }
+
+        ],
+
+         "pedidos": [
+            {   
+                "usuario": "hermione",
+                "tarjeta": 78787878,
+                "direccion": "Godric's Hollow, 23. West Country",
+                "productos": [
+                                {
+                                    "producto": "Hermione's wand",
+                                    "unidades": 1
+                                }
+                             ]
+            }, 
+            {   
+                "usuario": "root",
+                "tarjeta": 90909090,
+                "direccion": "Rooting Street, 89, East Root",
+                "productos": [
+                                {
+                                    "producto": "Voldemort's wand",
+                                    "unidades": 3
+                                },
+                                {
+                                    "producto": "Dumbledore's wand",
+                                    "unidades": 1
+                                }
+                             ]
+            }
+
+         ]
+     }
+
