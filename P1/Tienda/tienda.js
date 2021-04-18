@@ -25,11 +25,9 @@ const server = http.createServer((req, res)=>{
     const objecturl = url.parse(req.url);
     console.log(url.pathname);
     let camino='pages'+objecturl.pathname;
+    //-- En el caso de url vacía, devolvemos main.
     if (camino=='pages/')
       camino='pages/main.html';
-   
-    
-
     fs.stat(camino, error => {
 
       if (!error) {
@@ -39,23 +37,17 @@ const server = http.createServer((req, res)=>{
             res.writeHead(500, {'Content-Type': 'text/plain'});
             res.write('Error interno');
             res.end();					
-          } else {
-            
+          } else {           
             const vec = camino.split('.');
             const extension=vec[vec.length-1];
-            const mimearchivo=mime[extension];
-
+            const mime=mime[extension];
             res.writeHead(200, {'Content-Type': 'mimearchivo'});
             res.write(contenido);
             res.end();
-  
-
           }
         });
-      
       } else {
         console.log(camino);
-        
           if(camino == 'pages/ls'){
             fs.readdir("./pages", (error, files) => { 
               if(error){
