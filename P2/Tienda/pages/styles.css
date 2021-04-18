@@ -69,10 +69,14 @@ body {
 }
 #menuhead{
   font-family: "fontawesome-free-5.15.3-web/css/all.css", sans-serif;
-  display:flex;
+  display:grid;
+  grid-template-columns: 2fr 2fr 2fr 2fr;
+  grid-template-rows: 2fr;
   float: right;
   margin-right: 10%;
   margin-top: 40px;
+  justify-content: space-between;
+
 }
 #menuhead a{
   font-family: "fontawesome-free-5.15.3-web/css/all.css", sans-serif;
@@ -80,31 +84,75 @@ body {
   margin-right: 20%;
   color:  #ffffff;
   font-style: normal;
+  margin: auto;
 }
-#header #menuhead .menuhead-cart{
-  margin-right: 70%;
+#menuhome{
+  margin-left: 5px;
+  margin-right: 5px;
+}
+#menusearch{
+  margin-left: 5px;
+  margin-right: 5px;
+
 }
 
-.secciones{
-  text-align: center;
-  position: relative;
-  margin: 30px auto 50px;
-}
+
 #subvaritas{
    
   display: grid;
   grid-template-rows: 1fr 1fr;
   grid-template-columns: 1fr 1fr 1fr;
+
    
    }
    #subvaritas a{
     text-decoration: none;
     font-style: normal;
   }
-  #subvaritas2 a{
-    text-decoration: none;
-    font-style: normal;
-  }
+#subchuches{
+     
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-bottom: 50px;
+}
+#subchuches a{ 
+  font-style: normal;
+  text-decoration: none;
+}
+.butter{
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  
+}
+hr{
+    height: 2px;
+    color: #a85;
+    margin-top: 0px;
+    width: 75%;
+}
+.frog{
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+.bertie{
+ position: relative;
+ margin-left: auto;
+ margin-right: auto;
+ text-align: center;
+}
+.titulovar{
+  position: relative;
+  text-align: center;
+  margin-top: 80px;
+  margin-bottom: 0px;
+
+}
+
+  
    .image{
      max-width:100%;
      height:auto;
@@ -135,23 +183,6 @@ body {
     margin-left: auto;
     margin-right: auto;
     }
-   
-   #subvaritas2{
-    display: flex;
-    position: absolute;
-    top: 80%;
-    bottom: 40%;
-    left: 10%;
-    right: 10%;
-    margin: -75px -25px -25px -45px;
-    justify-content: space-between;
-  }
-
-  #varitas{
-      display: grid;
-      grid-row: 2;
-      grid-template-rows: repeat(2, 200px);
-  }
 
   .vol_w{
     position: relative;
@@ -175,9 +206,17 @@ h6{
   font-size: 30px;
   color:#a85;
   margin-bottom: 0px;
-  line-height: 34px;
 }
 
+h5{
+  font-family: "LUMOS";
+  text-align: center;
+  font-size: 40px;
+  color:white;
+  margin-bottom: 10px;
+  
+
+}
 
 p{
   font-family: "fontawesome-free-5.15.3-web/css/all.css", sans-serif;
