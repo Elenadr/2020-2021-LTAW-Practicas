@@ -11,9 +11,7 @@ const mime = {
     'html' : 'text/html',
     'css'  : 'text/css',
     'jpg'  : 'image/jpg',
-    'ico'  : 'image/x-icon',
-    'mp3'  : 'audio/mpeg3',
-    'mp4'  : 'video/mp4'
+    'ico'  : 'image/x-icon'
  };
 
 const server = http.createServer((req, res)=>{
@@ -40,7 +38,7 @@ const server = http.createServer((req, res)=>{
           } else {           
             const vec = camino.split('.');
             const extension=vec[vec.length-1];
-            const mime=mime[extension];
+            const mimearchivo=mime[extension];
             res.writeHead(200, {'Content-Type': 'mimearchivo'});
             res.write(contenido);
             res.end();
