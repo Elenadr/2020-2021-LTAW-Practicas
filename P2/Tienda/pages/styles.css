@@ -25,9 +25,18 @@ body {
   padding: 0px 0 0 0;
   top: 0;
   background-color:#00020a;
+  box-sizing: border-box;
   
 }
-
+#particles-js {
+  opacity: 1;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+}
 /* Style the header with a grey background and some padding */
 #header{
   /* Enable flex mode. */
@@ -76,48 +85,80 @@ body {
   margin-right: 70%;
 }
 
-
-#subtiendas{
-
-  display: flex;
-  position: absolute;
-  top: 30%;
-  bottom: 40%;
-  left: 10%;
-  right: 10%;
-  margin: -25px -25px -25px -25px;
-  justify-content: space-between;
-
-}
-#subtiendas a{
-
-  font-style: normal;
-  text-decoration:none;
-}
-
-.image{
-  max-width:100%;
-  height:auto;
-}
-.ollivander{
-  position: relative;
-  margin-left: auto;
-  margin-right: auto;
-
-
-}
-.quidditch{
-position: relative;
-margin-left: auto;
-margin-right: auto;
-
-}
-.honeydukes{
-  position: relative;
-  margin-left: auto;
-  margin-right: auto;
+.secciones{
   text-align: center;
+  position: relative;
+  margin: 30px auto 50px;
 }
+#subvaritas{
+   
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+   
+   }
+   #subvaritas a{
+    text-decoration: none;
+    font-style: normal;
+  }
+  #subvaritas2 a{
+    text-decoration: none;
+    font-style: normal;
+  }
+   .image{
+     max-width:100%;
+     height:auto;
+   }
+   .harry_w{
+     position: relative;
+     margin-left: auto;
+     margin-right: auto;
+   }
+   .hermione_w{
+   position: relative;
+   margin-left: auto;
+   margin-right: auto;
+   }
+   .sirius_w{
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    }
+   .dumbledore_w{
+     position: relative;
+     margin-left: auto;
+     margin-right: auto;
+     text-align: center;
+   }
+   .ron_w{
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    }
+   
+   #subvaritas2{
+    display: flex;
+    position: absolute;
+    top: 80%;
+    bottom: 40%;
+    left: 10%;
+    right: 10%;
+    margin: -75px -25px -25px -45px;
+    justify-content: space-between;
+  }
+
+  #varitas{
+      display: grid;
+      grid-row: 2;
+      grid-template-rows: repeat(2, 200px);
+  }
+
+  .vol_w{
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+
+  }
  /* Estilo del encabezado principal, osea del título */
 h3 {
   font-family: "HARRYP__";
@@ -126,7 +167,6 @@ h3 {
 
   color:#a85;
   margin: auto;
-
   }
 
 h6{
@@ -135,8 +175,9 @@ h6{
   font-size: 30px;
   color:#a85;
   margin-bottom: 0px;
-
+  line-height: 34px;
 }
+
 
 p{
   font-family: "fontawesome-free-5.15.3-web/css/all.css", sans-serif;
@@ -148,8 +189,10 @@ p{
 
 /* Estilo del pie de página */
 footer{
-  position: fixed;
+  position:relative;
+  left: 0;
   bottom: 0;
+  width: 100%;
 }
 @media (max-height:700px){
   footer { position: static; }
