@@ -102,6 +102,7 @@ body {
   display: grid;
   grid-template-rows: 1fr 1fr;
   grid-template-columns: 1fr 1fr 1fr;
+  
 
    
    }
@@ -128,9 +129,9 @@ body {
 }
 hr{
     height: 2px;
-    color: #a85;
+    color: white;
     margin-top: 0px;
-    width: 75%;
+    width: 90%;
 }
 .frog{
   position: relative;
@@ -152,7 +153,6 @@ hr{
 
 }
 
-  
    .image{
      max-width:100%;
      height:auto;
@@ -214,6 +214,9 @@ h5{
   font-size: 40px;
   color:white;
   margin-bottom: 10px;
+  border-top: white 4px double;
+  margin-left: 5%;
+  margin-right: 5%;
   
 
 }
