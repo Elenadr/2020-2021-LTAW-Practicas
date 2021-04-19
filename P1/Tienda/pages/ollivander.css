@@ -60,15 +60,18 @@
    }
    #menuhead{
     font-family: "fontawesome-free-5.15.3-web/css/all.css", sans-serif;
-    display:flex;
+    position: absolute;
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr;
+    grid-template-rows: 2fr;
     float: right;
-    margin-right: 10%;
+    margin-left: 70%;
     margin-top: 40px;
   }
   #menuhead a{
     font-family: "fontawesome-free-5.15.3-web/css/all.css", sans-serif;
     font-size: 30px;
-    margin-right: 20%;
+    margin-right: 10px;
     color:  #ffffff;
     font-style: normal;
   }
@@ -77,26 +80,31 @@
   }
    
    #subvaritas{
-   
-     display: flex;
-     position: absolute;
-     top: 30%;
-     bottom: 40%;
-     left: 10%;
-     right: 10%;
-     margin: -45px -25px -25px -45px;
-     justify-content: space-between;
-     margin-bottom: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    text-align: center;
+    margin-top: 50px;
+    margin-right: 10%;
+    margin-left: 10%;
+    float: center;
+    
    
    }
+   #particles-js {
+    opacity: 1;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+  }
    #subvaritas a{
     text-decoration: none;
     font-style: normal;
   }
-  #subvaritas2 a{
-    text-decoration: none;
-    font-style: normal;
-  }
+
    .image{
      max-width:100%;
      height:auto;
@@ -105,6 +113,7 @@
      position: relative;
      margin-left: auto;
      margin-right: auto;
+     text-align: center;
    
    
    }
@@ -112,6 +121,7 @@
    position: relative;
    margin-left: auto;
    margin-right: auto;
+   text-align: center;
    
    }
    .dumbledore_w{
@@ -119,29 +129,17 @@
      margin-left: auto;
      margin-right: auto;
      text-align: center;
+
    }
    
-   #subvaritas2{
-    display: flex;
-    position: absolute;
-    top: 80%;
-    bottom: 40%;
-    left: 10%;
-    right: 10%;
-    margin: -75px -25px -25px -45px;
-    justify-content: space-between;
-  }
 
-  #varitas{
-      display: grid;
-      grid-row: 2;
-      grid-template-rows: repeat(2, 200px);
-  }
+
 
   .vol_w{
     position: relative;
     margin-left: auto;
     margin-right: auto;
+    text-align: center;
 
   }
     /* Estilo del encabezado principal, osea del título */
@@ -178,7 +176,7 @@ footer{
   bottom: 0;
 }
 @media (max-height:700px){
-  footer { position: static; }
+  footer { position: relative; }
   header { padding-top:40px; }
 }
 

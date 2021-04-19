@@ -25,6 +25,7 @@ body {
   padding: 0px 0 0 0;
   top: 0;
   background-color:#00020a;
+  box-sizing: border-box;
   
 }
 
