@@ -1,0 +1,25 @@
+{
+  "name": "ejemplo3",
+  "version": "0.0.1",
+  "description": "Probando expres",
+  "main": "Ej-03.js",
+  "scripts": {
+    "test": "node"
+  },
+  "repository": {
+    "type": "git",
+    "url": "Ltaw p3"
+  },
+  "keywords": [
+    "expres"
+  ],
+  "author": "Elena del River",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+
+  "scripts": {
+    "start": "node Ej-03.js"
+  }
+}
