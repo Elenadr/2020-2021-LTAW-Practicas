@@ -6,19 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="stylesheet" href="formulario.css">
-    <title>Formulario</title>
+    <title>Log in your Account</title>
+    <link rel="shortcut icon" href="https://raw.githubusercontent.com/Elenadr/2020-2021-LTAW-Practicas/main/P1/wiki/icon.jpg">
 </head>
 <body>
     <!-- Div de cabecera. Se mantiene siempre. Es el 'dni' de mi página-->
     <div id="header">
         <div id="upheader"> 
-            <a href="formulario.html"><p><i class="fas fa-user"></i> Login</p></a>
-            <p>|</p>
+
             <a href="main.html"><p><i class="fas fa-home"></i> Home</p></a>
-            <p>|</p>
-            <a href="fail.html"><p><i class="fas fa-shopping-cart"></i>Cart</p></a>
-            <p>|</p>
-            <a href="fail.html"><p><i class="fas fa-search"></i>Search</p></a>
 
         </div>
         <img class= image src="https://github.com/Elenadr/2020-2021-LTAW-Practicas/blob/main/P1/wiki/logo.png?raw=true" >
@@ -28,13 +24,21 @@
     <div id="particles-js"></div>
     <!--- Formulario -->
     <form action="/procesar" method="get">
-        Login:
-        <input type="text" name="nombre"/>
-        <p></p>
-        Password:
-        <input type="text" name="apellidos" />
-        <p></p>
-          <input type="submit" value="Enviar"/>
+        <div class="backform">
+        <h2>Log in to your account</h2>
+        <div id = "identificacion">
+            <label for="nickname">Nickname: </label> 
+            <input type="text" name="nombre"/> 
+        </div>
+        <div id= "passw">
+            <label for="pwd">Password: </label>
+            <input type="password" id="pwd" name="pwd" />
+        </div>
+
+        <div class="button">
+          <button type="submit"> Send </button>
+        </div>
+    </div>
     </form>
 <!-- Div de footer. Se mantiene siempre.-->
 <footer class="footer-distributed">

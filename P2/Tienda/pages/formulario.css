@@ -107,33 +107,43 @@
       float: right;
       font-family: "fontawesome-free-5.15.3-web/css/all.css", sans-serif;
       font-family: LUMOS;
-      font-size: 20px;
+      font-size: 30px;
       padding-top: 8px;
       padding-right: 8px;
     }
 form{
+    position: relative;
     font-size   : 100%;
     color: white;
     font-family: "LUMOS";
     font-size: 40px;
     text-align: center;
-    margin: 20%;
-    margin-top: 10%;
-    background: #FFF url(background.jpg);
+    width  : 50%;
+    height : 400px;
+    margin : 0 auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+.backform{
+  background-color:rgba(255, 255, 255, 0.1);
+  z-index: 0;
+  margin-left: auto;
+  margin-right: auto;
 
 }
-    input[type=text] {
-        border: 1px dotted #999;
-        border-radius: 0;      
-        -webkit-appearance: none;
-      }
-button, input, select, textarea {
-        font-size   : 100%;
-        color: black;
-        font-family: "LUMOS";
-        font-size: 40px;
-        text-align: center;
-      }
+input, textarea {
+  font    : .9em/5em "handwriting", sans-serif;
+  border: #a85 4px solid;
+  border-radius: 20px;
+  text-align: center;
+  margin  : 20px;
+  width   : 200px;
+  height: 30px;
+  background-color: rgba(255, 255, 255, 1);
+  font-family: "LUMOS";
+}
+
+
 /* Estilo del encabezado principal, osea del título */
 h3 {
     font-family: "HARRYP__";
@@ -142,14 +152,8 @@ h3 {
 
     color:#a85;
     margin: auto;
-  
     }
-    #menuhead p{
-        font-family: "fontawesome-free-5.15.3-web/css/all.css", sans-serif;
-        font-family: "LUMOS";
-        font-size: 30px;
-        color: white;
-      }
+
     p{
        font-family: "fontawesome-free-5.15.3-web/css/all.css", sans-serif;
        font-family: "LUMOS";
@@ -157,15 +161,36 @@ h3 {
        color: white;
        
      }
-  h6{
+  h2{
     font-family: "LUMOS";
-    
-    font-size: 30px;
+
     color:#a85;
-    margin-bottom: 0px;
+    margin-bottom: 30px;
     text-align: center;
   }
 
+  button{
+    font-family: "LUMOS";
+    background-color: rgb(163, 131, 83);
+    margin-top: 5%;
+    margin-bottom: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    padding: 3px 10px;
+    text-decoration: none;
+    font-size: 40px;
+    border-radius: 15px;
+    display:inline-block;
+    border-width: 3px;
+    border-color: white
+  }
+  button:hover {
+    background-color: rgb(219, 219, 219);
+    color: #a85 ;
+    border-color:  #a85;
+    border-width: 3px;
+  }
 footer{
   position: fixed;
   bottom: 0;
