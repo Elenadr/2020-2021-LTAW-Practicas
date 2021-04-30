@@ -3,16 +3,19 @@
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <link rel="stylesheet" href="articulos.css">
-    <title> Bertie Botts | Honeydukes | Diagon Alley</title>
+    <link rel="stylesheet" href="styles.css">
+    <title>Diagon Alley</title>
     <link rel="shortcut icon" href="https://raw.githubusercontent.com/Elenadr/2020-2021-LTAW-Practicas/main/P1/wiki/icon.jpg">
+ 
+	
 </head>
 
 <body>
+    
     <!-- Div de cabecera. Se mantiene siempre. Es el 'dni' de mi página-->
     <div id="header">
         <div id="upheader"> 
-            <a href="formulario.html"><p><i class="fas fa-user"></i> Login</p></a>
+            <a href="formulario.html"><p><i class="fas fa-user-check"></i> Logged</p></a>
             <p>|</p>
             <a href="main.html"><p><i class="fas fa-home"></i> Home</p></a>
             <p>|</p>
@@ -21,40 +24,74 @@
             <a href="fail.html"><p><i class="fas fa-search"></i>Search</p></a>
 
         </div>
-        <img class= image src="https://github.com/Elenadr/2020-2021-LTAW-Practicas/blob/main/P1/wiki/logo.png?raw=true" >
-        <h3>Honeydukes</h3>
-    </div>
 
-    <!-- Div de cuerpo. Donde se contiene todo lo que no es cabecera ni footer.-->
+        <img class= image src="https://raw.githubusercontent.com/Elenadr/2020-2021-LTAW-Practicas/main/P1/wiki/logo.png" >
+        <h3>Diagon Alley</h3>
+    </div>
     
-         <!-- Div de particles. Es para el fondo en movimiento, se aplica a todo el cuerpo-->
-       <div id="particles-js">
-        <!-- Div de subtiendas. Para aplicarles la misma conf y poner en linea-->
-
-        <div id="articulo">
-            <div class="articulo-imagen">
-                <div class="articulo-titulo"> <h6> Bertie Botts Every Flavor Beans </h6></div>
-            <br>
-            
-                <img class= image src="https://raw.githubusercontent.com/Elenadr/2020-2021-LTAW-Practicas/main/P1/wiki/berti2.png">
-            </div>
-           
-            <div class="articulo-descripción"> 
-                <div class="articulo-precio"><h6> <i class="fas fa-coins"></i> 6 Sickles</h6> </div>
-                <br>
-                <ul>
-                 <li>Every flavour imaginable.</li>
-                 <li>Ordinary flavours like chocolate, or marmalade.</li>
-                 <li>But also flavours line spinach, liver, or tripe.</li>
-                 <li>A Risk With Every Mouthful. </li>
-                
-                </ul>
-                <p id="note">You want to be careful with those. <br> When they say every flavour, they mean every flavour.</p> 
-                <a href="fail.html"><button id="cart">Add to Cart</button></a>
-                <a href="main.html"><button id="stop">Back</button></a>
-            </div>
+    <!-- Div de cuerpo. Donde se contiene todo lo que no es cabecera ni footer.-->
+    <div id="particles-js"></div>
+        <!-- Div de particles. Es para el fondo en movimiento, se aplica a todo el cuerpo-->
+        
+            <!-- Div de subtiendas. Para aplicarles la misma conf y poner en linea-->
+        <div class="titulovar">
+            <h5>Ollivander's</h5>
+            <hr>
         </div>
-    </div>
+
+            <div id="subvaritas">
+                <div class="harry_w">
+                    <div class="titulo_varita">
+                        <a href= "harry_v.html"><h6> Harry's Wand </h6>             
+                    </div>
+                    <img class= image src="https://github.com/Elenadr/2020-2021-LTAW-Practicas/blob/main/P1/wiki/vharry.png?raw=true"></a>
+                </div>
+                <div class="hermione_w">
+                    <div class="titulo_herm">
+                       <a href="hermione_v.html"><h6> Hermione's Wand</h6>
+                    </div>
+                    <br>
+                    <img class= image src="https://github.com/Elenadr/2020-2021-LTAW-Practicas/blob/main/P1/wiki/vhermi.png?raw=true"></a> 
+                </div>
+
+                <div class="dumbledore_w">
+                    <div class="titulo_dumb">
+                       <a href="dumbledore_v.html"> <h6> Dumbledore's Wand </h6>
+                    </div>
+                    <br>
+                    <img class= image src="https://github.com/Elenadr/2020-2021-LTAW-Practicas/blob/main/P1/wiki/vdumb.png?raw=true"></a>
+                </div>
+                <div class="vol_w">
+                    <div class="titulo_vold">
+                        <a href="voldemort_v.html"><h6> Voldemort's Wand </h6>
+                    </div>
+                    
+                    <img class= image src="https://github.com/Elenadr/2020-2021-LTAW-Practicas/blob/main/P1/wiki/vvold.png?raw=true"></a>
+                </div>
+                <div class="sirius_w">
+                    <div class="titulo_siri">
+                        <a href="sirius_v.html"><h6> Sirius's Wand </h6>
+                    </div>
+
+                    <img class= image src="https://raw.githubusercontent.com/Elenadr/2020-2021-LTAW-Practicas/main/P1/wiki/vsiriu.png"></a>
+                </div>
+                <div class="ron_w">
+                    <div class="titulo_ron">
+                        <a href="ron_v.html"><h6> Ron's Wand </h6>
+                    </div>
+
+                    <img class= image src="https://raw.githubusercontent.com/Elenadr/2020-2021-LTAW-Practicas/main/P1/wiki/vron.png"></a>
+                </div>
+            </div>
+
+
+           
+            
+       <hr>
+
+
+        
+
 <!-- Div de footer. Se mantiene siempre.-->
 <footer class="footer-distributed">
 
@@ -81,7 +118,7 @@
                 <a href="https://www.youtube.com/watch?v=B6y9_kis0Uw&t=31s"><i class="fab fa-youtube"></i></a>
             </div>
         </div>
-    <!-- Footer derecho-->
+    
         <div class="footer-right">
             <div>  
                <p><i class="fas fa-map-marker"></i> <a href="https://g.page/wbtourlondon?share">Diagon Alley, Leaky Cauldron

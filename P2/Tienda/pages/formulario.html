@@ -23,17 +23,19 @@
 
     <div id="particles-js"></div>
     <!--- Formulario -->
-    <form action="/procesar" method="get">
+    <form action="procesar" method="post">
         <div class="backform">
         <h2>Log in to your account</h2>
         <div id = "identificacion">
-            <label for="nickname">Nickname: </label> 
-            <input type="text" name="nombre"/> 
+            <label for="nombre">Nickname: </label> 
+            <input type="text" name="nombre" size="30"/> 
         </div>
         <div id= "passw">
             <label for="pwd">Password: </label>
-            <input type="password" id="pwd" name="pwd" />
+            <input type="password" name="pwd" size="30" />
         </div>
+        
+        <p></p>           
 
         <div class="button">
           <button type="submit"> Send </button>

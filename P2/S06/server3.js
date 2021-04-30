@@ -34,7 +34,7 @@ const server = http.createServer((req, res) => {
         content = RESPUESTA.replace("NOMBRE", nombre);
         content = content.replace("APELLIDOS", apellidos);
   
-        //-- si el usuario es AnaPoveda Garcia se añade HTML extra
+        //
         let html_extra = "";
         if (nombre=="Hermione" && apellidos=="Granger") {
            html_extra = "<h2>Hermione Granger no necesita registrarse</h2>";

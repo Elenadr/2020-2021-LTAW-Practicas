@@ -1,0 +1,70 @@
+{
+    "usuarios":[{
+      "nickname":"Hermione",
+      "tipo":"root",
+      "nombre":"Elena del Río",
+      "password": "1234",
+      "email": "elenadelriourjc@gmail.com"
+    },
+    {
+        "nickname":"Voldemort",
+        "tipo":"normal",
+        "nombre":"María del Río",
+        "password": "6789",
+        "email": "mdelriogalera@gmail.com"
+    }],
+    "productos":[
+      {
+        "nombre":"Harry's Wand",
+        "descripcion":"Phoenix feather core",
+        "precio":"6 Galeones",
+        "stock": "30"
+      },
+      {
+        "nombre":"Hermione's Wand",
+        "descripcion":"Dragon heartstring core",
+        "precio":"6 Galeones",
+        "stock": "10"
+      },
+      {
+        "nombre":"Dumbledore's Wand",
+        "descripcion":"Unknown core",
+        "precio":"6 Galeones",
+        "stock": "6"
+      },
+      {
+        "nombre":"Voldemort's Wand",
+        "descripcion":"Phoenix feather core",
+        "precio":"7 Galeones",
+        "stock": "4"
+      },
+      {
+        "nombre":"Sirius' Wand",
+        "descripcion":"Dragon heartstring core",
+        "precio":"7 Galeones",
+        "stock": "12"
+      },
+      {
+        "nombre":"Ron's Wand",
+        "descripcion":"Unicorn hair core",
+        "precio":"7 Galeones",
+        "stock": "19"
+      }
+    ],
+    "pedidos":[
+      {
+        "nickname": "Voldemort",
+        "direccion": "Avenida principal, Hogsmeade",
+        "tarjeta": "9812481394",
+        "productos":"Harry's Wand, Dumbledore's Wand, Voldemort's Wand",
+        "importe":"21 galeones"
+      },
+      {
+        "nickname": "Hermione",
+        "direccion": "Callejón Diagon, Cajero Armazón",
+        "tarjeta": "4368719280",
+        "productos":"Hermione's Wand",
+        "importe": "7 Galeones"
+      }
+    ]
+  }

@@ -1,60 +1,48 @@
-<!DOCTYPE html>  
-<html lang="es" dir="ltr">
+<!DOCTYPE html>
+<html>
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <link rel="stylesheet" href="articulos.css">
-    <title> Chocolate Frog | Honeydukes | Diagon Alley</title>
+    <link rel="stylesheet" href="formulario.css">
+    <title>Log in your Account</title>
     <link rel="shortcut icon" href="https://raw.githubusercontent.com/Elenadr/2020-2021-LTAW-Practicas/main/P1/wiki/icon.jpg">
 </head>
-
 <body>
     <!-- Div de cabecera. Se mantiene siempre. Es el 'dni' de mi página-->
     <div id="header">
         <div id="upheader"> 
-            <a href="formulario.html"><p><i class="fas fa-user"></i> Login</p></a>
-            <p>|</p>
+
             <a href="main.html"><p><i class="fas fa-home"></i> Home</p></a>
-            <p>|</p>
-            <a href="fail.html"><p><i class="fas fa-shopping-cart"></i>Cart</p></a>
-            <p>|</p>
-            <a href="fail.html"><p><i class="fas fa-search"></i>Search</p></a>
 
         </div>
         <img class= image src="https://github.com/Elenadr/2020-2021-LTAW-Practicas/blob/main/P1/wiki/logo.png?raw=true" >
-        <h3>Honeydukes</h3>
+        <h3>Diagon Alley</h3>
     </div>
 
-    <!-- Div de cuerpo. Donde se contiene todo lo que no es cabecera ni footer.-->
-    
-        <!-- Div de particles. Es para el fondo en movimiento, se aplica a todo el cuerpo-->
-       <div id="particles-js">
-        <!-- Div de subtiendas. Para aplicarles la misma conf y poner en linea-->
-
-        <div id="articulo">
-            <div class="articulo-imagen">
-                <div class="articulo-titulo"> <h6> Chocolate Frog </h6></div>
-            <br>
-            
-                <img class= image src="https://raw.githubusercontent.com/Elenadr/2020-2021-LTAW-Practicas/main/P1/wiki/ranas.png">
-            </div>
+    <div id="particles-js"></div>
+    <!--- Formulario -->
+    <form action="procesar" method="post">
+        <div class="backform">
+        <h2>Log in to your account</h2>
+        <div id = "identificacion">
+            <label for="nombre">Nickname: </label> 
+            <input type="text" name="nombre" size="30"/> 
+        </div>
+        <div id= "passw">
+            <label for="pwd">Password: </label>
+            <input type="password" name="pwd" size="30" />
+        </div>
+        HTML_EXTRA
+        <p></p>
            
-            <div class="articulo-descripción"> 
-                <div class="articulo-precio"><h6> <i class="fas fa-coins"></i> 3 Sickles</h6> </div>
-                <br>
-                <ul>
-                 <li>Sweet made from chocolate in the form of a frog.</li>
-                 <li>Collectible card of a famous witch or wizard in each pack.</li>
-                 <li>Made of seventy percent croakoa.</li>
-                 <li>Chocolate Frogs also came in a white chocolate variety </li>
-                
-                </ul>
-                <p id="note">Allergy Advice: For allergens, please see ingredients in bold.</p> 
-                <a href="fail.html"><button id="cart">Add to Cart</button></a>
-                <a href="main.html"><button id="stop">Back</button></a>
-            </div>
+
+        <div class="button">
+          <button type="submit"> Send </button>
         </div>
     </div>
+    </form>
 <!-- Div de footer. Se mantiene siempre.-->
 <footer class="footer-distributed">
 
@@ -104,5 +92,6 @@
     <!-- Scripts necesarios para aplicar fondo en mov y configurarlo.-->
     <script src="particles.js" ></script>
     <script src="app.js" ></script>
-    </body>
-    </html>
+
+</body>
+</html>
