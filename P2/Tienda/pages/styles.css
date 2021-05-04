@@ -232,10 +232,8 @@ p{
 
 /* Estilo del pie de página */
 footer{
-  position:relative;
-  left: 0;
+  position: fixed;
   bottom: 0;
-  width: 100%;
 }
 @media (max-height:700px){
   footer { position: static; }
