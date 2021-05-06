@@ -4,6 +4,7 @@ const url = require('url');
 const querystring = require('querystring');
 
 
+
 const PUERTO = 9000;
 const MAIN = fs.readFileSync('pages/main.html','utf-8');
 const FAIL = fs.readFileSync('pages/fail.html','utf-8');
@@ -15,6 +16,7 @@ const VOLDEMORT = fs.readFileSync('pages/voldemort_v.html','utf-8');
 const RON = fs.readFileSync('pages/ron_v.html','utf-8');
 const FORMULARIO = fs.readFileSync('pages/formulario.html','utf-8');
 const RESPUESTA = fs.readFileSync('pages/respuesta.html','utf-8');
+const FORMERROR = fs.readFileSync('pages/form_error.html','utf-8');
 
 const mime = {
   'html' : 'text/html',
@@ -49,6 +51,8 @@ const server = http.createServer((req, res)=>{
     
     let nombre = myURL.searchParams.get('nombre');
     let pwd = myURL.searchParams.get('pwd');
+    console.log(" Nombre usuario: " + nombre);
+  console.log(" Password: " + pwd);
 
     if(myURL.pathname == '/'){
       content = MAIN;
@@ -60,18 +64,16 @@ const server = http.createServer((req, res)=>{
       content=HERMIONE;
     }else if(myURL.pathname == '/dumbledore_v.html'){
       content=DUMBLEDORE;
-    }else if(myURL.pathname == '/sirius_v'){
+    }else if(myURL.pathname == '/sirius_v.html'){
       content=SIRIUS;
-    }else if(myURL.pathname == '/ron_v'){
+    }else if(myURL.pathname == '/ron_v.html'){
       content=RON;
-    }else if(myURL.pathname == '/voldemort_v'){
+    }else if(myURL.pathname == '/voldemort_v.html'){
       content=VOLDEMORT;
     }else if(myURL.pathname == '/formulario.html'){
 
-          content = FORMULARIO;
+      content = FORMULARIO;
 
-
-    
     }else if(myURL.pathname == '/procesar'){
 
       content_type = "text/html";
@@ -82,13 +84,14 @@ const server = http.createServer((req, res)=>{
       //-- si el usuario es Chuck Norris se añade HTML extra
       let html_extra = "";
       
-      if (nombre=="Hermione") {
-         html_extra = "<h2>Chuck Norris no necesita registrarse</h2>";
+      if ((nombre=="Hermione" & pwd == "1234")||(nombre=="Voldemort" & pwd == "6789"))  {
+         html_extra = "<h2>Hemione in da house</h2>";
       }
       else{
-        content= FAIL;
+        content=FORMERROR
+        
       }
-      content = content.replace("HTML_EXTRA", html_extra);
+      content = RESPUESTA.replace("HTML_EXTRA", html_extra);
       
     }else{
       const objetourl= url.parse(req.url);
