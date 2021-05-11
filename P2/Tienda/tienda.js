@@ -62,14 +62,8 @@ function get_user(req) {
 
 const server = http.createServer((req, res)=>{
   //-- Leer la Cookie recibida y mostrarla en la consola
-  const cookie = req.headers.cookie;
 
-  if (cookie) {
-    console.log("Cookie: " + cookie);
-  }
-  else {
-    console.log("Petición sin cookie");
-  }
+
   console.log("Petición recibida!");
     //-- Construir el objeto url con la url de la solicitud
     const myURL = new URL(req.url, 'http://' + req.headers['host']);
@@ -87,14 +81,10 @@ const server = http.createServer((req, res)=>{
     //-- Obtener le usuario que ha accedido
     //-- null si no se ha reconocido
 
- 
-
-
-    
     let nombre = myURL.searchParams.get('nombre');
     let pwd = myURL.searchParams.get('pwd');
     console.log(" Nombre usuario: " + nombre);
-  console.log(" Password: " + pwd);
+    console.log(" Password: " + pwd);
   //-- Obtener le usuario que ha accedido
   //-- null si no se ha reconocido
   let user = get_user(req);
@@ -125,8 +115,13 @@ const server = http.createServer((req, res)=>{
     }else if(myURL.pathname == '/voldemort_v.html'){
       content=VOLDEMORT;
     }else if(myURL.pathname == '/formulario.html'){
-
-      content = FORMULARIO;
+      if(user){
+        content = MAIN.replace("HTML_EXTRA", `<i class="fas fa-user-check"></i>` + user + "</p>");
+        console.log('Ya estamos log');
+      }else{
+        content = FORMULARIO;
+      }
+      
 
     }else if(myURL.pathname == '/procesar'){
 
