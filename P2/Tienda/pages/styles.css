@@ -221,7 +221,12 @@ h5{
   margin-left: 5%;
   margin-right: 5%;
 }
-
+h2{
+  font-family: "fontawesome-free-5.15.3-web/css/all.css", sans-serif;
+  font-family: "LUMOS";
+  font-size: 30px;
+  color: #a85;
+}
 p{
   font-family: "fontawesome-free-5.15.3-web/css/all.css", sans-serif;
   font-family: "LUMOS";

@@ -7,6 +7,7 @@ const querystring = require('querystring');
 
 const PUERTO = 9000;
 const MAIN = fs.readFileSync('pages/main.html','utf-8');
+const MAINLOG = fs.readFileSync('pages/mainlog.html','utf-8');
 const FAIL = fs.readFileSync('pages/fail.html','utf-8');
 const HARRY = fs.readFileSync('pages/harry_v.html','utf-8');
 const HERMIONE = fs.readFileSync('pages/hermione_v.html','utf-8');
@@ -26,13 +27,53 @@ const mime = {
   'js'   : 'application/javascript'
 };
 
+function get_user(req) {
+
+  //-- Leer la Cookie recibida
+  const cookie = req.headers.cookie;
+
+  //-- Hay cookie
+  if (cookie) {
+    
+    //-- Obtener un array con todos los pares nombre-valor
+    let pares = cookie.split(";");
+    
+    //-- Variable para guardar el usuario
+    let user;
+
+    //-- Recorrer todos los pares nombre-valor
+    pares.forEach((element, index) => {
+
+      //-- Obtener los nombres y valores por separado
+      let [nombre, valor] = element.split('=');
+
+      //-- Leer el usuario
+      //-- Solo si el nombre es 'user'
+      if (nombre.trim() === 'user') {
+        user = valor;
+      }
+    });
+
+    //-- Si la variable user no está asignada
+    //-- se devuelve null
+    return user || null;
+  }
+}
 
 const server = http.createServer((req, res)=>{
+  //-- Leer la Cookie recibida y mostrarla en la consola
+  const cookie = req.headers.cookie;
+
+  if (cookie) {
+    console.log("Cookie: " + cookie);
+  }
+  else {
+    console.log("Petición sin cookie");
+  }
   console.log("Petición recibida!");
     //-- Construir el objeto url con la url de la solicitud
     const myURL = new URL(req.url, 'http://' + req.headers['host']);
       //-- Leer los parámetros
-
     console.log("");
     console.log("Método: " + req.method);
     console.log("Recurso: " + req.url);
@@ -41,22 +82,35 @@ const server = http.createServer((req, res)=>{
 
     //-- Por defecto entregar main
     let content_type = mime["html"];
-    let content;
+    let content = MAIN.replace("HTML_EXTRA", `<i class="fas fa-user"></i>`+"<p> Login </p>");
 
     //-- Obtener le usuario que ha accedido
     //-- null si no se ha reconocido
 
  
- 
+
+
     
     let nombre = myURL.searchParams.get('nombre');
     let pwd = myURL.searchParams.get('pwd');
     console.log(" Nombre usuario: " + nombre);
   console.log(" Password: " + pwd);
+  //-- Obtener le usuario que ha accedido
+  //-- null si no se ha reconocido
+  let user = get_user(req);
 
-    if(myURL.pathname == '/'){
-      content = MAIN;
+  console.log("User: " + user);
+    if(myURL.pathname == '/' ){
+      //--- Si la variable user está asignada
+      if (user) {
 
+        //-- Añadir a la página el nombre del usuario
+        console.log("user: " + user);
+        content = MAIN.replace("HTML_EXTRA", `<i class="fas fa-user-check"></i>` + user + "</p>");
+      } else {
+        //-- Mostrar el enlace a la página de login
+        content = MAIN.replace("HTML_EXTRA", `<i class="fas fa-user"></i>`+"<p> Login </p>");
+      }
     }else if(myURL.pathname == '/harry_v.html'){
   
       content=HARRY;
@@ -86,8 +140,10 @@ const server = http.createServer((req, res)=>{
       
       if (nombre=="Hermione" & pwd == "1234"){
         html_extra = "<h2>Welcome back Hermione</h2>";
+        res.setHeader('Set-Cookie', "user="+ nombre);
       }else if(nombre=="Voldemort" & pwd == "6789")  {
          html_extra = "<h2>Welcome back  who shall not be named </h2>";
+         res.setHeader('Set-Cookie', "user="+ nombre);
       }
       else{
         content=FORMERROR;
