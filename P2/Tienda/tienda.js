@@ -18,6 +18,7 @@ const RON = fs.readFileSync('pages/ron_v.html','utf-8');
 const FORMULARIO = fs.readFileSync('pages/formulario.html','utf-8');
 const RESPUESTA = fs.readFileSync('pages/respuesta.html','utf-8');
 const FORMERROR = fs.readFileSync('pages/form_error.html','utf-8');
+const LOGOUT = fs.readFileSync('pages/logout.html','utf-8');
 
 const mime = {
   'html' : 'text/html',
@@ -116,7 +117,7 @@ const server = http.createServer((req, res)=>{
       content=VOLDEMORT;
     }else if(myURL.pathname == '/formulario.html'){
       if(user){
-        content = MAIN.replace("HTML_EXTRA", `<i class="fas fa-user-check"></i>` + user + "</p>");
+        content = LOGOUT;
         console.log('Ya estamos log');
       }else{
         content = FORMULARIO;

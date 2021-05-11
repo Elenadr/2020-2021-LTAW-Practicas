@@ -67,9 +67,21 @@
     height: 100vh;
     z-index: 0;
   }
-#relleno{
 
-    text-align: center;
+#stay{
+  margin:auto;
+  margin-left: 20%;
+
+  float:left;
+  text-align: center;
+
+}
+#singout{
+  margin:auto;
+
+  float:right;
+  text-align: center;
+  margin-right: 20%;
 }
 /* Estilo del encabezado principal, osea del título */
 h3 {
