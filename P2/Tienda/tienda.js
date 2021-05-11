@@ -132,8 +132,6 @@ const server = http.createServer((req, res)=>{
 
       content_type = "text/html";
 
-      content = RESPUESTA.replace("NOMBRE", nombre);
-      content = content.replace("APELLIDOS", pwd);
 
       //-- si el usuario es Chuck Norris se añade HTML extra
       let html_extra = "";
