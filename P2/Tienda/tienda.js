@@ -84,11 +84,13 @@ const server = http.createServer((req, res)=>{
       //-- si el usuario es Chuck Norris se añade HTML extra
       let html_extra = "";
       
-      if ((nombre=="Hermione" & pwd == "1234")||(nombre=="Voldemort" & pwd == "6789"))  {
-         html_extra = "<h2>Hemione in da house</h2>";
+      if (nombre=="Hermione" & pwd == "1234"){
+        html_extra = "<h2>Welcome back Hermione</h2>";
+      }else if(nombre=="Voldemort" & pwd == "6789")  {
+         html_extra = "<h2>Welcome back  who shall not be named </h2>";
       }
       else{
-        content=FORMERROR
+        content=FORMERROR;
         
       }
       content = RESPUESTA.replace("HTML_EXTRA", html_extra);
