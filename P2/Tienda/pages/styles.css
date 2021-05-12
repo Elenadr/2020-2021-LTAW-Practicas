@@ -70,7 +70,17 @@ body {
   
 }
 
-#upheader{
+#upheaderleft{
+  display:flex;
+  position: absolute;
+  left: 40px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  top: 54%;
+  z-index: 1;
+}
+#upheaderight{
   display:flex;
   position: absolute;
   right: 40px;
@@ -89,8 +99,37 @@ i{
 
   margin-right: 4px;
   }
-
+  input{
+  font    : .9em/5em "handwriting", sans-serif;
+  border: #a85 2px solid;
+  border-radius: 20px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.2);
+  width   : 200px;
+  height: 30px;
+  font-family: "LUMOS";
+  color: #ffffff;
+  font-size: 25px;;
+  }
 #upheader p{
+
+  font-family: "fontawesome-free-5.15.3-web/css/all.css", sans-serif;
+  font-family: LUMOS;
+  font-size: 20px;
+  margin: 5px;
+
+}
+#upheaderleft{
+  margin-top: 0;
+  float: left;
+  font-family: "fontawesome-free-5.15.3-web/css/all.css", sans-serif;
+  font-family: LUMOS;
+  font-size: 20px;
+  padding-top: 8px;
+  padding-right: 8px;
+margin-left: 20px;
+}
+#upheaderight{
   margin-top: 0;
   float: right;
   font-family: "fontawesome-free-5.15.3-web/css/all.css", sans-serif;
@@ -98,8 +137,8 @@ i{
   font-size: 20px;
   padding-top: 8px;
   padding-right: 8px;
-
 }
+
 
 
 #subvaritas{

@@ -1,13 +1,12 @@
+//Modulos node
 const http = require('http');
 const fs = require('fs');
 const url = require('url');
 const querystring = require('querystring');
 
-
-
+//Constantes
 const PUERTO = 9000;
 const MAIN = fs.readFileSync('pages/main.html','utf-8');
-const MAINLOG = fs.readFileSync('pages/mainlog.html','utf-8');
 const FAIL = fs.readFileSync('pages/fail.html','utf-8');
 const HARRY = fs.readFileSync('pages/harry_v.html','utf-8');
 const HERMIONE = fs.readFileSync('pages/hermione_v.html','utf-8');
@@ -20,12 +19,18 @@ const RESPUESTA = fs.readFileSync('pages/respuesta.html','utf-8');
 const FORMERROR = fs.readFileSync('pages/form_error.html','utf-8');
 const LOGOUT = fs.readFileSync('pages/logout.html','utf-8');
 
+
+//-- Leer fichero JSON con los productos
+const PRODUCTOS_JSON = fs.readFileSync('tienda.json');
+//-- Obtener el array de productos
+
 const mime = {
   'html' : 'text/html',
   'css'  : 'text/css',
   'jpg'  : 'image/jpg',
   'ico'  : 'image/x-icon',
-  'js'   : 'application/javascript'
+  'js'   : 'application/javascript',
+  'json' : 'application/json'
 };
 
 function get_user(req) {
@@ -78,12 +83,13 @@ const server = http.createServer((req, res)=>{
     //-- Por defecto entregar main
     let content_type = mime["html"];
     let content = MAIN.replace("HTML_EXTRA", `<i class="fas fa-user"></i>`+"<p> Login </p>");
-
+    let productos = "";
     //-- Obtener le usuario que ha accedido
     //-- null si no se ha reconocido
 
     let nombre = myURL.searchParams.get('nombre');
     let pwd = myURL.searchParams.get('pwd');
+    
     console.log(" Nombre usuario: " + nombre);
     console.log(" Password: " + pwd);
   //-- Obtener le usuario que ha accedido
@@ -115,6 +121,32 @@ const server = http.createServer((req, res)=>{
       content=RON;
     }else if(myURL.pathname == '/voldemort_v.html'){
       content=VOLDEMORT;
+    }else if(myURL.pathname == 'productos'){
+      console.log("Peticion de Productos!")
+      content_type = mime["json"];
+      //-- Leer los parámetros
+      let param1 = myURL.searchParams.get('param1');
+
+      param1 = param1.toUpperCase();
+
+      console.log("  Param: " +  param1);
+
+      let result = [];
+
+      for (let prod of productos) {
+
+          //-- Pasar a mayúsculas
+          prodU = prod.toUpperCase();
+
+          //-- Si el producto comienza por lo indicado en el parametro
+          //-- meter este producto en el array de resultados
+          if (prodU.startsWith(param1)) {
+              result.push(prod);
+          }
+          
+      }
+      console.log(result);
+      content = JSON.stringify(result);
     }else if(myURL.pathname == '/formulario.html'){
       if(user){
         content = LOGOUT;
@@ -122,14 +154,11 @@ const server = http.createServer((req, res)=>{
       }else{
         content = FORMULARIO;
       }
-      
 
     }else if(myURL.pathname == '/procesar'){
 
       content_type = "text/html";
 
-
-      //-- si el usuario es Chuck Norris se añade HTML extra
       let html_extra = "";
       
       if (nombre=="Hermione" & pwd == "1234"){
@@ -138,8 +167,7 @@ const server = http.createServer((req, res)=>{
       }else if(nombre=="Voldemort" & pwd == "6789")  {
          html_extra = "<h2>Welcome back  who shall not be named </h2>";
          res.setHeader('Set-Cookie', "user="+ nombre);
-      }
-      else{
+      }else{
         content=FORMERROR;
         
       }
