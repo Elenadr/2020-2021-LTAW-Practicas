@@ -13,19 +13,20 @@
         <script src="client.js" defer></script>
     </head>
     <body>
-      <div class="cabecera">
-        <h1>CHAT WEB</h1>
+
+      <div class="header">
+        <h3>Magic Chat</h3>
       </div>
-      <div class="centro">
-        <div class="chat">
-          <h3>Magic Chat</h3>
+  
+  
+  
+        <div class="screen">
           <p id="display"></p>
         </div>
-        <div class="writing">
-          <input type="text" size="80" style="height:30px" id="msg" autocomplete="off" />
-          <button type="button" id="send">Send</button>
-        </div>
-      </div>
-
+  
+        <div class="barra">
+          <input type="text" placeholder="Escribe aquí los mensajes..." autocomplete="off" id="msg_entry">
+          <button type="button" id="send">Send</button>          
+        </div>      
     </body>
 </html>
