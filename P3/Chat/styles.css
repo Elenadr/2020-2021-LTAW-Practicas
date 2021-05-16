@@ -24,7 +24,9 @@ body {
   margin: 0;
   padding: 0px 0 0 0;
   top: 0;
-  background-image: url("a.jpg");
+  background-image: url("https://raw.githubusercontent.com/Elenadr/2020-2021-LTAW-Practicas/main/P3/wiki/map.jpg");
+background-position: center;
+
   box-sizing: border-box;
 }
 /* Style the header with a grey background and some padding */
@@ -36,7 +38,7 @@ body {
   background-size:cover;
   background-repeat: no-repeat;
   text-align: center;
-  background-color: rgb(26, 28, 65, 1);
+
   margin-bottom: 2%;
   height: 80px;
 }
