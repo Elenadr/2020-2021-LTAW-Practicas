@@ -36,8 +36,9 @@ body {
   background-size:cover;
   background-repeat: no-repeat;
   text-align: center;
-  background-color: rgb(26, 28, 65);
+  background-color: rgb(26, 28, 65, 1);
   margin-bottom: 2%;
+  height: 80px;
 }
 
 /* Add media queries for responsiveness - when the screen is 500px wide or less, stack the links on top of each other */
@@ -62,52 +63,58 @@ body {
 
   }
 
-
-  
-  
   button{
     font-family: "LUMOS";
     background-color: rgb(163, 131, 83);
-
     color: white;
     padding: 3px 10px;
     text-align: center;
     text-decoration: none;
     font-size: 30px;
     border-radius: 15px;
-
     border-width: 3px;
     border-color: white
   }
+
   button:hover {
-    background-color: rgb(219, 219, 219);
+    background-color: #ffff;
     color: #a85 ;
     border-color:  #a85;
     border-width: 3px;
   }
 
-
   .screen{
     width: 60%;
     height: 400px;
     background-color: #ffffffa4;
-    padding: 10px;
+    padding: 0px;
     font-family: 'LUMOS';
     margin: auto;
     text-align:left;
     margin:0 auto;
     padding:10px;
     overflow: auto;
-  
+    border-radius: 20px;
+    border:black 15px solid;
   }
   
   .barra{
     width: 60%;
-    height: 85px;
+    height: 65px;
     background-color: #04080f;
     padding: 10px;
     margin: auto;
+    border:black 15px solid;
+    border-bottom:black 10px solid;
+    border-top:black 0px solid;
+    margin-bottom: 20px;
+    border-radius: 20px;
   }
+
+#display{
+  font-size: 25px;
+  margin: 0%;
+}
 
   input, textarea {
     border: #a85 4px solid;

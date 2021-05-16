@@ -18,3 +18,11 @@ send.onclick = () => {
   //-- Borrar el mensaje actual
   msg_entry.value = "";
 }
+//-- Al apretar el botón se envía un mensaje al servidor
+msg_entry.onchange = () => {
+  if (msg_entry.value)
+    socket.send(msg_entry.value);
+  
+  //-- Borrar el mensaje actual
+  msg_entry.value = "";
+}
