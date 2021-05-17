@@ -27,14 +27,15 @@ app.get('/', (req, res) => {
 //-- biblioteca socket.io para el cliente
 app.use('/', express.static(__dirname +'/'));
 
-//-- El directorio publico contiene ficheros estáticos
-app.use(express.static('public'));
 
 //------------------- GESTION SOCKETS IO
 //-- Evento: Nueva conexion recibida
 io.on('connect', (socket) => {
   
-  console.log('** NUEVA CONEXIÓN **'.yellow);
+  console.log('** NUEVA CONEXIÓN **'.yellow + socket.id);
+   //-- Le damos la bienvenida a través del evento 'hello'
+
+  socket.emit('hello', "Welcome to Magic Chat");
 
   //-- Evento de desconexión
   socket.on('disconnect', function(){
@@ -43,10 +44,10 @@ io.on('connect', (socket) => {
 
   //-- Mensaje recibido: Reenviarlo a todos los clientes conectados
   socket.on("message", (msg)=> {
-    console.log("Mensaje Recibido!: " + msg.blue);
+    console.log("Mensaje Recibido!: " + socket.id + msg.blue);
 
     //-- Reenviarlo a todos los clientes conectados
-    io.send(msg);
+    io.emit(msg);
   });
 
 });
