@@ -14,7 +14,7 @@ const server = http.Server(app);
 
 //-- Crear el servidor de websockets, asociado al servidor http
 const io = socket(server);
-
+let counter = 0;
 //-------- PUNTOS DE ENTRADA DE LA APLICACION WEB
 //-- Definir el punto de entrada principal de mi aplicación web
 app.get('/', (req, res) => {
@@ -34,20 +34,43 @@ io.on('connect', (socket) => {
   
   console.log('** NUEVA CONEXIÓN **'.yellow + socket.id);
    //-- Le damos la bienvenida a través del evento 'hello'
-
+   socket.broadcast.emit('message', 'New user');
   socket.emit('hello', "Welcome to Magic Chat");
+  counter += 1;
 
   //-- Evento de desconexión
   socket.on('disconnect', function(){
     console.log('** CONEXIÓN TERMINADA **'.yellow);
+    counter -= 1;
   });  
 
   //-- Mensaje recibido: Reenviarlo a todos los clientes conectados
   socket.on("message", (msg)=> {
-    console.log("Mensaje Recibido!: " + socket.id + msg.blue);
+    if (msg.startsWith("/")) {
+      console.log("Ojo, es un comando".orange);
+        if (msg == "/help") {
+            socket.send("comandos");
+        }else if (msg == "/list") {
+            socket.send("Dumbledore's army members: " + counter );
+        }else if (msg == "/hello") {
+            socket.send("I solemnly swear that I am up to no good.");
+        }else if (msg == "/date") {
+            console.log("date".green);
+        }else{
+          console.log("Out muggle".purple);
+        }
+    listen
+    }else{
+      console.log("Mensaje Recibido!: " + socket.id + msg.blue);
 
-    //-- Reenviarlo a todos los clientes conectados
-    io.emit(msg);
+      //-- Reenviarlo a todos los clientes conectados
+      io.send(msg);
+    }
+
+
+
+
+
   });
 
 });
