@@ -3,6 +3,7 @@ const socket = require('socket.io');
 const http = require('http');
 const express = require('express');
 const colors = require('colors');
+const snakeNames = require('snake-names');
 
 const PUERTO = 9000;
 
@@ -40,6 +41,7 @@ io.on('connect', (socket) => {
    counter += 1;
    socket.send('<b> APARECIUM! </b>' + "  "+  'Welcome to magic chat!');
   socket.broadcast.emit('message', '<b> ALOHOMORA! </b>' + "  "+ 'New magician is in the chat. ');
+  socket.id = "<b>" + snakeNames.random()+ "</b>" ;
 
 
   //-- Evento de desconexión
@@ -62,7 +64,7 @@ io.on('connect', (socket) => {
             + "<br>"+ 
             '<b> / list </b>' + "   " + 'Will return the number of connected magicians'
             + "<br>"+ 
-            '<b> / hello </b>' + "   " + "The server will return the magic greeting"
+            '<b> / helo </b>' + "   " + "The server will return the magic greeting"
             + "<br>"+ 
             '<b> / date </b>' + "   " + "It will return the date");
         }else if (msg == "/list") {
@@ -73,6 +75,7 @@ io.on('connect', (socket) => {
             let now= new Date();
             console.log("date".green + 'La fecha actual es',now);
             socket.send("Today is:  <b>" + now + "</b>");
+            
         }else{
           console.log("Out muggle".purple);
         }
@@ -80,10 +83,10 @@ io.on('connect', (socket) => {
       console.log("Mensaje Recibido!: " + socket.id + msg.blue);
 
       //-- Reenviarlo a todos los clientes conectados
-      io.send(msg);
-
+      
+      io.send(socket.id + ": "  + msg);
+      
     }
-
   });
 
 });
