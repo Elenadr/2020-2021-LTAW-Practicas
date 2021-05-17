@@ -6,6 +6,7 @@
   "author": "Elena",
   "license": "ISC",
   "dependencies": {
+    "change-color-randomly": "^1.0.0",
     "colors": "^1.4.0",
     "express": "^4.17.1",
     "jquery": "^3.6.0",

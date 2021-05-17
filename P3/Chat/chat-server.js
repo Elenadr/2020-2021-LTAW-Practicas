@@ -4,7 +4,9 @@ const http = require('http');
 const express = require('express');
 const colors = require('colors');
 const snakeNames = require('snake-names');
-
+const { JSDOM } = require( "jsdom" );
+const { window } = new JSDOM( "" );
+const $ = require( "jquery" )( window );
 const PUERTO = 9000;
 
 //-- Crear una nueva aplciacion web
@@ -15,6 +17,7 @@ const server = http.Server(app);
 
 //-- Crear el servidor de websockets, asociado al servidor http
 const io = socket(server);
+var escribiendo = false;
 let counter = 0;
 
 
@@ -39,16 +42,18 @@ io.on('connect', (socket) => {
 
    //-- Le damos la bienvenida a través del evento 'hello'
    counter += 1;
-   socket.send('<b> APARECIUM! </b>' + "  "+  'Welcome to magic chat!');
-  socket.broadcast.emit('message', '<b> ALOHOMORA! </b>' + "  "+ 'New magician is in the chat. ');
-  socket.id = "<b>" + snakeNames.random()+ "</b>" ;
-
+   socket.id =  snakeNames.random() ;
+   socket.send('<b> APARECIUM! </b>' + "  "+  'Welcome to magic chat' + "  " + socket.id + "!" );
+  
+  socket.broadcast.emit('message', '<b> ALOHOMORA! </b>' + "  "+ "<i>" + socket.id  + "</i> " +'joins the chat. ');
+  
+  
 
   //-- Evento de desconexión
   socket.on('disconnect', function(){
     console.log('** CONEXIÓN TERMINADA **'.yellow);
     counter -= 1;
-    socket.broadcast.emit('message', '<b> EVANESCO! </b>' + "  "+ 'One magician has left the chat. ');
+    socket.broadcast.emit('message', '<b> EVANESCO! </b>' + "  "+ "<i>" +  socket.id  + " </i> " + 'left the chat. ');
   });  
 
 
@@ -78,13 +83,13 @@ io.on('connect', (socket) => {
             
         }else{
           console.log("Out muggle".purple);
-        }
+        }    
     }else{
       console.log("Mensaje Recibido!: " + socket.id + msg.blue);
 
       //-- Reenviarlo a todos los clientes conectados
       
-      io.send(socket.id + ": "  + msg);
+      io.send("<b>" + socket.id + "</b> : "  + msg);
       
     }
   });
