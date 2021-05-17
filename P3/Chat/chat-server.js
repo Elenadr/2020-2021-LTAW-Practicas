@@ -15,6 +15,8 @@ const server = http.Server(app);
 //-- Crear el servidor de websockets, asociado al servidor http
 const io = socket(server);
 let counter = 0;
+
+
 //-------- PUNTOS DE ENTRADA DE LA APLICACION WEB
 //-- Definir el punto de entrada principal de mi aplicación web
 app.get('/', (req, res) => {
@@ -33,43 +35,54 @@ app.use('/', express.static(__dirname +'/'));
 io.on('connect', (socket) => {
   
   console.log('** NUEVA CONEXIÓN **'.yellow + socket.id);
+
    //-- Le damos la bienvenida a través del evento 'hello'
-   socket.broadcast.emit('message', 'New user');
-  socket.emit('hello', "Welcome to Magic Chat");
-  counter += 1;
+   counter += 1;
+   socket.send('<b> APARECIUM! </b>' + "  "+  'Welcome to magic chat!');
+  socket.broadcast.emit('message', '<b> ALOHOMORA! </b>' + "  "+ 'New magician is in the chat. ');
+
 
   //-- Evento de desconexión
   socket.on('disconnect', function(){
     console.log('** CONEXIÓN TERMINADA **'.yellow);
     counter -= 1;
+    socket.broadcast.emit('message', '<b> EVANESCO! </b>' + "  "+ 'One magician has left the chat. ');
   });  
+
 
   //-- Mensaje recibido: Reenviarlo a todos los clientes conectados
   socket.on("message", (msg)=> {
     if (msg.startsWith("/")) {
       console.log("Ojo, es un comando".orange);
         if (msg == "/help") {
-            socket.send("comandos");
+            socket.send(
+              "Commands:" 
+            + "<br>"+ 
+            '<b> / help </b>' + "   " + 'Will show a list with all supported spells'
+            + "<br>"+ 
+            '<b> / list </b>' + "   " + 'Will return the number of connected magicians'
+            + "<br>"+ 
+            '<b> / helo </b>' + "   " + "The server will return the magic greeting"
+            + "<br>"+ 
+            '<b> / date </b>' + "   " + "It will return the date");
         }else if (msg == "/list") {
-            socket.send("Dumbledore's army members: " + counter );
+            socket.send("Magicians in the chat: " + "<b>"+ counter + "</b>");
         }else if (msg == "/hello") {
-            socket.send("I solemnly swear that I am up to no good.");
+            socket.send("Welcome! Like Hagrid told Harry: "  + "<b> You are a wizard </b>");
         }else if (msg == "/date") {
-            console.log("date".green);
+            let now= new Date();
+            console.log("date".green + 'La fecha actual es',now);
+            socket.send("Today is:  <b>" + now + "</b>");
         }else{
           console.log("Out muggle".purple);
         }
-    listen
     }else{
       console.log("Mensaje Recibido!: " + socket.id + msg.blue);
 
       //-- Reenviarlo a todos los clientes conectados
       io.send(msg);
+
     }
-
-
-
-
 
   });
 
