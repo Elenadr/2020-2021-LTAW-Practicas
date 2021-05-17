@@ -4,9 +4,7 @@ const http = require('http');
 const express = require('express');
 const colors = require('colors');
 const snakeNames = require('snake-names');
-const { JSDOM } = require( "jsdom" );
-const { window } = new JSDOM( "" );
-const $ = require( "jquery" )( window );
+
 const PUERTO = 9000;
 
 //-- Crear una nueva aplciacion web
@@ -17,7 +15,7 @@ const server = http.Server(app);
 
 //-- Crear el servidor de websockets, asociado al servidor http
 const io = socket(server);
-var escribiendo = false;
+
 let counter = 0;
 
 
@@ -69,7 +67,7 @@ io.on('connect', (socket) => {
             + "<br>"+ 
             '<b> / list </b>' + "   " + 'Will return the number of connected magicians'
             + "<br>"+ 
-            '<b> / helo </b>' + "   " + "The server will return the magic greeting"
+            '<b> / hello </b>' + "   " + "The server will return the magic greeting"
             + "<br>"+ 
             '<b> / date </b>' + "   " + "It will return the date");
         }else if (msg == "/list") {
