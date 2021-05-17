@@ -1,10 +1,10 @@
 {
   "name": "chat",
-  "version": "1.0.0",
   "description": "chat cliente servidor",
+  "version": "0.0.1",
   "main": "chat-server.js",
   "author": "Elena",
-  "license": "ISC",
+  "license": "GPL-3.0",
   "dependencies": {
     "colors": "^1.4.0",
     "express": "^4.17.1",
