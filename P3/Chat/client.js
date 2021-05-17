@@ -2,8 +2,7 @@
 const display = document.getElementById("display");
 const msg_entry = document.getElementById("msg_entry");
 const send = document.getElementById("send");
-const audio = document.querySelector("audio");
-let sound = false;
+const audio = document.getElementById("audio");
 
 //-- Crear un websocket. Se establece la conexión con el servidor
 const socket = io();
@@ -16,7 +15,7 @@ socket.on("message", (msg_entry)=>{
 send.onclick = () => {
   if (msg_entry.value)
     socket.send(msg_entry.value);
-  
+    audio.play();
   //-- Borrar el mensaje actual
   msg_entry.value = "";
 }
@@ -24,6 +23,7 @@ send.onclick = () => {
 msg_entry.onchange = () => {
   if (msg_entry.value)
     socket.send(msg_entry.value);
+    audio.play();
   
   //-- Borrar el mensaje actual
   msg_entry.value = "";
