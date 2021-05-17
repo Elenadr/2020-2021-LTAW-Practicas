@@ -21,9 +21,6 @@ info3.textContent = process.cwd();
 btn_test.onclick = () => {
     display.innerHTML += "TEST! ";
     console.log("Botón apretado!");
-
-    //-- Enviar mensaje al proceso principal
-    electron.ipcRenderer.invoke('test', "MENSAJE DE PRUEBA: Boton apretado");
 }
 
 //-- Mensaje recibido del proceso MAIN

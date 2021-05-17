@@ -40,18 +40,8 @@ electron.app.on('ready', () => {
   //-- y luego enviar el mensaje al proceso de renderizado para que 
   //-- lo saque por la interfaz gráfica
   win.on('ready-to-show', () => {
+    console.log("HOLA?");
     win.webContents.send('print', "MENSAJE ENVIADO DESDE PROCESO MAIN");
   });
 
-  //-- Enviar un mensaje al proceso de renderizado para que lo saque
-  //-- por la interfaz gráfica
-  win.webContents.send('print', "MENSAJE ENVIADO DESDE PROCESO MAIN");
-
-});
-
-
-//-- Esperar a recibir los mensajes de botón apretado (Test) del proceso de 
-//-- renderizado. Al recibirlos se escribe una cadena en la consola
-electron.ipcMain.handle('test', (event, msg) => {
-  console.log("-> Mensaje: " + msg);
 });

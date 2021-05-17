@@ -3,10 +3,28 @@
     "description": "Estas es mi primera aplicación de escritorio en Electron",
     "version": "0.1.0",
     "main": "main.js",
-    "scripts": {
-        "start": "electron ."
+    "author": {
+        "name": "Obijuan"
     },
-    "dependencies": {
-        "electron": "^12.0.7"
+    "homepage": "",
+    "license": "LGPL",
+    "scripts": {
+        "start": "electron .",
+        "pack": "electron-builder --dir",
+        "dist": "electron-builder",
+        "postinstall": "electron-builder install-app-deps"
+    },
+    "build": {
+        "appId": "mi-electron-app-1-id",
+        "linux": {
+            "target": [
+                "AppImage"
+            ],
+            "category": "Utility"
+        }
+    },
+    "devDependencies": {
+        "electron": "^12.0.6",
+        "electron-builder": "^22.10.5"
     }
 }
