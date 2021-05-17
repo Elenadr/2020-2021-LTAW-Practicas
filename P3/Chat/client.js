@@ -2,6 +2,8 @@
 const display = document.getElementById("display");
 const msg_entry = document.getElementById("msg_entry");
 const send = document.getElementById("send");
+const audio = document.querySelector("audio");
+let sound = false;
 
 //-- Crear un websocket. Se establece la conexión con el servidor
 const socket = io();

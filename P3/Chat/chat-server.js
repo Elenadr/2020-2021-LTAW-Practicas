@@ -62,7 +62,7 @@ io.on('connect', (socket) => {
             + "<br>"+ 
             '<b> / list </b>' + "   " + 'Will return the number of connected magicians'
             + "<br>"+ 
-            '<b> / helo </b>' + "   " + "The server will return the magic greeting"
+            '<b> / hello </b>' + "   " + "The server will return the magic greeting"
             + "<br>"+ 
             '<b> / date </b>' + "   " + "It will return the date");
         }else if (msg == "/list") {
