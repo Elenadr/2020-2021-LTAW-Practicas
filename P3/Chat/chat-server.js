@@ -13,7 +13,7 @@ const app = express();
 //-- Crear un servidor, asosiaco a la App de express
 const server = http.Server(app);
 
-//-- Crear el servidor de websockets, asociado al servidor http
+//-- Crear el servidor de websockets, asociado al server htto
 const io = socket(server);
 
 let counter = 0;
