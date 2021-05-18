@@ -132,7 +132,7 @@ electron.app.on('ready', () => {
   //win.loadURL('https://www.urjc.es/etsit');
 
   //-- Cargar interfaz gráfica en HTML
-  win.loadFile("index.html");
+  win.loadFile("chat_electron.html");
 
   //-- Esperar a que la página se cargue y se muestre
   //-- y luego enviar el mensaje al proceso de renderizado para que 

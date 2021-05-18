@@ -11,11 +11,15 @@
     },
     "dependencies": {
         "colors": "^1.4.0",
-        "electron": "^12.0.8",
         "express": "^4.17.1",
         "ip": "^1.1.5",
         "snake-names": "^1.0.3",
         "socket.io": "^4.1.2",
         "websocket": "^1.0.34"
+    },
+
+    "devDependencies": {
+        "electron": "^12.0.8",
+        "electron-builder": "^22.10.5"
     }
 }
