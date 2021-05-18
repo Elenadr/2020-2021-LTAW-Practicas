@@ -1,0 +1,137 @@
+/* Documento de estilo pagina principa de tienda */
+
+/* Uso font-face para poder usar las fuentes
+   descargadas de internet que quiero usar. */
+@font-face
+{
+   font-family: "LUMOS";
+   src: url("LUMOS.ttf");
+}
+
+@font-face
+{
+   font-family: "HARRYP__";
+   src: url("HARRYP__.TTF");
+}
+
+@font-face {
+  font-family: "FontAwesome";
+  src: url("fontawesome-free-5.15.3-web/css/all.css");
+}
+
+/* Estilo del body */
+body {
+  margin: 0;
+  padding: 0px 0 0 0;
+  top: 0;
+  background-image: url("https://raw.githubusercontent.com/Elenadr/2020-2021-LTAW-Practicas/main/P3/wiki/agua.png");
+  background-position: center;
+
+  box-sizing: border-box;
+}
+/* Style the header with a grey background and some padding */
+.header{
+  /* Enable flex mode. */
+  display: grid; 
+  /* Align items vertically in the center. */
+  align-items: center;
+  background-size:cover;
+  background-repeat: no-repeat;
+  text-align: center;
+
+  margin-bottom: 2%;
+  height: 80px;
+}
+
+/* Add media queries for responsiveness - when the screen is 500px wide or less, stack the links on top of each other */
+@media (max-width: 800px){
+  header{
+          /* Reverse the axis of the header, making it vertical. */
+          flex-direction: column;
+          position:relative;
+          /* Align items to the begining (the left) of the header. */
+          align-items: flex-start;
+  }
+  
+}
+
+ /* Estilo del encabezado principal, osea del título */
+ h3 {
+  font-family: "HARRYP__";
+  font-size: 50px;
+  text-align: center;
+  margin-top: 20px;
+  color:#a85;
+
+  }
+
+  button{
+    font-family: "LUMOS";
+    background-color: rgb(163, 131, 83);
+    color: white;
+    padding: 3px 10px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 30px;
+    border-radius: 15px;
+    border-width: 3px;
+    border-color: white
+  }
+
+  button:hover {
+    background-color: #ffff;
+    color: #a85 ;
+    border-color:  #a85;
+    border-width: 3px;
+  }
+
+  .screen{
+    width: 60%;
+    height: 400px;
+    /*background-color: #ffffffa4; */
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 0px;
+    font-family: 'LUMOS';
+    margin: auto;
+    text-align:left;
+    margin:0 auto;
+    padding:10px;
+    overflow: auto;
+    border-radius: 20px;
+    border:black 15px solid;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+  }
+  
+  .barra{
+    width: 60%;
+    height: 65px;
+    background-color: black;
+    padding: 10px;
+    margin: auto;
+    border:black 15px solid;
+    border-bottom:black 10px solid;
+    border-top:black 0px solid;
+    margin-bottom: 20px;
+    border-radius: 20px;
+  }
+
+#display{
+  font-size: 25px;
+  margin: 0%;
+  overflow-y: scroll;
+}
+
+  input, textarea {
+    border: #a85 4px solid;
+    border-radius: 20px;
+    text-align: center;
+    margin  : 20px;
+    height: 30px;
+    width: 70%;
+    background-color: rgba(255, 255, 255, 1);
+    font-family: "LUMOS";
+    font-size: 30px;
+    margin-left: 50px;
+  }
+  

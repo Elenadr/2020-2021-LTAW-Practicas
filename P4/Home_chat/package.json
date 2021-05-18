@@ -1,0 +1,18 @@
+{
+  "name": "mi-electron-app",
+  "description": "Estas es mi primera aplicación de escritorio en Electron",
+  "version": "0.1.0",
+  "main": "main.js",
+  "author": {
+    "name": "Obijuan"
+  },
+  "homepage": "",
+  "license": "LGPL",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "electron": "^12.0.7",
+    "express": "^4.17.1",
+    "socket.io": "^4.1.1",
+    "websocket": "^1.0.34"
+  }
+}
