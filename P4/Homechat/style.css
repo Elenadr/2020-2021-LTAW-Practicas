@@ -24,10 +24,13 @@
      margin: 0;
      padding: 0px 0 0 0;
      top: 0;
-     background-color: beige;
+    background-image: url('a.jpg');
+    background-size:auto;
      background-position: center;
     font-family: 'LUMOS';
      box-sizing: border-box;
+     margin-left: 5%;
+     margin-right: 5%;
    }
    /* Style the header with a grey background and some padding */
    .header{
@@ -38,7 +41,7 @@
      background-size:cover;
      background-repeat: no-repeat;
      text-align: center;
-   
+     
      margin-bottom: 2%;
      height: 80px;
    }
@@ -51,17 +54,33 @@
              position:relative;
              /* Align items to the begining (the left) of the header. */
              align-items: flex-start;
+             
      }
      
    }
    #right{
     float:right;
-    width: 50%;
+    width: 45%;
+    background-color: rgba(255, 255, 255, 0.7);
+    text-align: center;
+    height: 660px;
+    border-radius: 10px;
 }
-
+li{
+  text-align: justify;
+  font-size: 23px;
+  font-weight:lighter;
+}
+#info1,#info2, #info3, #info4, #info5, #info5, #info6{
+color: #7c0000;
+}
 #left{
   float:left;
-  width: 40%;
+  width: 52%;
+  background-color: rgba(255, 255, 255, 0.7);
+  text-align: center;
+  height: 660px;
+  border-radius: 10px;
 }
     /* Estilo del encabezado principal, osea del título */
     h3 {
@@ -69,14 +88,21 @@
      font-size: 50px;
      text-align: center;
      margin-top: 20px;
-     color:#a85;
-   
+     color:#7c0000;;
+     background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 10px;
+    padding: 10px;
+     }
+     h2{
+       font-size: 30px;
+        margin-top: 20px;
+        margin-bottom: 20px;
      }
    
      button{
        font-family: "LUMOS";
        background-color: rgb(163, 131, 83);
-       color: white;
+      color:honeydew;
        padding: 3px 10px;
        text-align: center;
        text-decoration: none;
@@ -87,10 +113,11 @@
      }
    
      button:hover {
-       background-color: #ffff;
+       background-color: #7c0000;
        color: #a85 ;
        border-color:  #a85;
        border-width: 3px;
+       text-decoration: none;
      }
    
      .screen{
@@ -111,36 +138,21 @@
        scroll-behavior: smooth;
      }
      
-     .barra{
-       width: 60%;
-       height: 65px;
-       background-color: black;
-       padding: 10px;
-       margin: auto;
-       border:black 15px solid;
-       border-bottom:black 10px solid;
-       border-top:black 0px solid;
-       margin-bottom: 20px;
-       border-radius: 20px;
-     }
-   
+
    #display{
      font-size: 25px;
      margin: 0%;
      overflow-y: scroll;
      color: black;
+     text-align: justify;
+     margin-left: 5%;
    }
    
-     input, textarea {
-       border: #a85 4px solid;
-       border-radius: 20px;
-       text-align: center;
-       margin  : 20px;
-       height: 30px;
-       width: 70%;
-       background-color: rgba(255, 255, 255, 1);
-       font-family: "LUMOS";
-       font-size: 30px;
-       margin-left: 50px;
-     }
+p{
+  color: #7c0000;
+  font-size: 25px;
+  margin-top: 0%;
+  margin-bottom: 0%;
+}
+
      
