@@ -1,5 +1,5 @@
 {
-  "name": "mi-electron-app",
+  "name": "my-magic-chat",
   "description": "app Electron",
   "version": "0.1.0",
   "main": "main.js",
@@ -13,7 +13,7 @@
     "postinstall": "electron-builder install-app-deps"
   },
   "electron-builder": {
-    "appId": "yourappid",
+    "appId": "my-magic-chat",
     "category": "your.app.category.type",
     "dmg": {
       "contents": [
@@ -30,10 +30,10 @@
       ]
     },
     "linux": {
-      "target": [
-        "AppImage",
-        "deb"
-      ]
+        "target": [
+            "AppImage"
+        ],
+        "category": "Utility"
     },
     "win": {
       "target": "squirrel",
