@@ -58,9 +58,6 @@ io.on('connect', (socket) => {
   //-- Enviar al render mensaje de conexion
   win.webContents.send('msg_client', '<b> ALOHOMORA! </b>' + "  "+ "<i>" + socket.id  + "</i> " +'joins the chat. ');
 
-  
-  
-
   //-- Evento de desconexión
   socket.on('disconnect', function(){
     console.log('** CONEXIÓN TERMINADA **'.yellow);
@@ -128,8 +125,8 @@ electron.app.on('ready', () => {
 
     //-- Crear la ventana principal de nuestra aplicación
     win = new electron.BrowserWindow({
-        width: 900,   //-- Anchura 
-        height: 720,  //-- Altura
+        width: 1000,   //-- Anchura 
+        height: 850,  //-- Altura
 
         //-- Permitir que la ventana tenga ACCESO AL SISTEMA
         webPreferences: {
