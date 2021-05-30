@@ -14,7 +14,7 @@ const info4 = document.getElementById("info4");
 const info5 = document.getElementById("info5");
 const info6 = document.getElementById("info6");
 const print = document.getElementById("print");
-const users = document.getElementById("users");
+const usuarios = document.getElementById("users");
 const ip_dir = document.getElementById("ip_dir");
 const qr = document.getElementById("qr");
 
@@ -30,15 +30,10 @@ info5.textContent = process.versions.chrome;
 info6.textContent = process.versions.electron;
 
 
-electron.ipcRenderer.on('ip', (event, message) => {
+//-- Numero de usuarios
+electron.ipcRenderer.on('users', (event, message) => {
     console.log("Recibido: " + message);
-    ip_dir.textContent = message;
-        
-        qrcode.toDataURL(message, function (err, url) {
-            console.log("Imprimiendo codigo qr");
-            qr.src = url;
-        });
-
+    usuarios.textContent = message;
 });
 btn_test.onclick = () => {
     console.log("Botón apretado!");
@@ -57,10 +52,14 @@ electron.ipcRenderer.on('print', (event, message) => {
     print.textContent = message;
     
   });
-//-- Numero de usuarios
-electron.ipcRenderer.on('users', (event, message) => {
+
+  electron.ipcRenderer.on('ip', (event, message) => {
     console.log("Recibido: " + message);
-    users.textContent = message;
+    ip_dir.textContent = message;
+        
+        qrcode.toDataURL(message, function (err, url) {
+            console.log("Imprimiendo codigo qr");
+            qr.src = url;
+        });
+
 });
-
-
