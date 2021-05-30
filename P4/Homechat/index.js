@@ -49,6 +49,7 @@ btn_test.onclick = () => {
 //-- Mensajes de los clientes
 electron.ipcRenderer.on('msg_client', (event, message) => {
     display.innerHTML += message + "<br>";
+    display.scrollTop = message.scrollHeight;
 });
 //-- Mensaje recibido del proceso MAIN
 electron.ipcRenderer.on('print', (event, message) => {

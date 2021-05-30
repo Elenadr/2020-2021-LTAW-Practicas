@@ -1,26 +1,56 @@
 {
-    "name": "mi-electron-app",
-    "description": "app Electron",
-    "version": "0.1.0",
-    "main": "main.js",
-    "author": {
-        "name": "Helen"
+  "name": "mi-electron-app",
+  "description": "app Electron",
+  "version": "0.1.0",
+  "main": "main.js",
+  "author": {
+    "name": "Helen"
+  },
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
+    "postinstall": "electron-builder install-app-deps"
+  },
+  "electron-builder": {
+    "appId": "yourappid",
+    "category": "your.app.category.type",
+    "dmg": {
+      "contents": [
+        {
+          "x": 110,
+          "y": 150
+        },
+        {
+          "x": 240,
+          "y": 150,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
     },
-    "scripts": {
-        "start": "electron ."
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ]
     },
-    "dependencies": {
-        "colors": "^1.4.0",
-        "express": "^4.17.1",
-        "ip": "^1.1.5",
-        "qrcode": "^1.4.4",
-        "snake-names": "^1.0.3",
-        "socket.io": "^4.1.2",
-        "websocket": "^1.0.34"
-    },
-
-    "devDependencies": {
-        "electron": "^12.0.8",
-        "electron-builder": "^22.10.5"
+    "win": {
+      "target": "squirrel",
+      "icon": "build/icon.ico"
     }
+  },
+  "dependencies": {
+    "colors": "^1.4.0",
+    "express": "^4.17.1",
+    "ip": "^1.1.5",
+    "qrcode": "^1.4.4",
+    "snake-names": "^1.0.3",
+    "socket.io": "^4.1.2",
+    "websocket": "^1.0.34"
+  },
+  "devDependencies": {
+    "electron": "^12.0.8",
+    "electron-builder": "^22.10.5"
+  }
 }
