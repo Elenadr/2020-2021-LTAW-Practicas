@@ -24,9 +24,9 @@
      margin: 0;
      padding: 0px 0 0 0;
      top: 0;
-     background-image: url("https://raw.githubusercontent.com/Elenadr/2020-2021-LTAW-Practicas/main/P3/wiki/agua.png");
+     background-color: beige;
      background-position: center;
-   
+    font-family: 'LUMOS';
      box-sizing: border-box;
    }
    /* Style the header with a grey background and some padding */
@@ -54,7 +54,15 @@
      }
      
    }
-   
+   #right{
+    float:right;
+    width: 50%;
+}
+
+#left{
+  float:left;
+  width: 40%;
+}
     /* Estilo del encabezado principal, osea del título */
     h3 {
      font-family: "HARRYP__";
@@ -120,6 +128,7 @@
      font-size: 25px;
      margin: 0%;
      overflow-y: scroll;
+     color: black;
    }
    
      input, textarea {

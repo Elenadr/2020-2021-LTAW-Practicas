@@ -7,8 +7,8 @@ const express = require('express');
 const colors = require('colors');
 const snakeNames = require('snake-names');
 const ip = require('ip');
-
 const PUERTO = 9000;
+
 
 //-- Crear una nueva aplciacion web
 const app = express();
@@ -46,10 +46,18 @@ io.on('connect', (socket) => {
 
    //-- Le damos la bienvenida a través del evento 'hello'
    counter += 1;
+    //-- Enviar numero de usuarios al renderer
+  win.webContents.send('users', counter);
    socket.id =  snakeNames.random() ;
    socket.send('<b> APARECIUM! </b>' + "  "+  'Welcome to magic chat' + "  " + socket.id + "!" );
+   win.webContents.send('msg_client', '<b> APARECIUM! </b>' + "  "+  'Welcome to magic chat' + "  " + socket.id + "!" );
   
-  socket.broadcast.emit('message', '<b> ALOHOMORA! </b>' + "  "+ "<i>" + socket.id  + "</i> " +'joins the chat. ');
+     //-- Enviar mensaje de nuevo usuario a todos los usuarios
+  io.send( '<b> ALOHOMORA! </b>' + "  "+ "<i>" + socket.id  + "</i> " +'joins the chat. ');
+
+  //-- Enviar al render mensaje de conexion
+  win.webContents.send('msg_client', '<b> ALOHOMORA! </b>' + "  "+ "<i>" + socket.id  + "</i> " +'joins the chat. ');
+
   
   
 
@@ -57,12 +65,20 @@ io.on('connect', (socket) => {
   socket.on('disconnect', function(){
     console.log('** CONEXIÓN TERMINADA **'.yellow);
     counter -= 1;
-    socket.broadcast.emit('message', '<b> EVANESCO! </b>' + "  "+ "<i>" +  socket.id  + " </i> " + 'left the chat. ');
+    win.webContents.send('users', counter);
+
+        //-- Enviar mensaje de desconexión de usuario a todos los usuarios
+        io.send( '<b> EVANESCO! </b>' + "  "+ "<i>" +  socket.id  + " </i> " + 'left the chat. ');
+
+        //-- Enviar al render mensaje de desconexion
+        win.webContents.send('msg_client', '<b> EVANESCO! </b>' + "  "+ "<i>" +  socket.id  + " </i> " + 'left the chat. ');
   });  
 
 
   //-- Mensaje recibido: Reenviarlo a todos los clientes conectados
   socket.on("message", (msg)=> {
+    //-- Enviar al render
+    win.webContents.send('msg_client', socket.id + ': '  + msg);
     if (msg.startsWith("/")) {
       console.log("Ojo, es un comando".orange);
         if (msg == "/help") {
@@ -146,7 +162,6 @@ electron.app.on('ready', () => {
 //-- Esperar a recibir los mensajes de botón apretado (Test) del proceso de 
 //-- renderizado. Al recibirlos se escribe una cadena en la consola
 electron.ipcMain.handle('test', (event, msg) => {
-  console.log("-> Mensaje: " + msg);
   io.send(msg);
   win.webContents.send('msg', msg);
 });

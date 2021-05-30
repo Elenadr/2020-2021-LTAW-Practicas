@@ -7,8 +7,7 @@
 
     <!-- Permitir sólo scripts y ficheros de la máquina local -->
     <!-- Con esto se elimina el aviso de seguridad: Insecure Content-Security-Policy -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self';" />
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self';" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:" />
 
 
     <!-- Hoja de estilo de la interfaz -->
@@ -23,25 +22,30 @@
     <h3>Hogsmeade Chat Server</h3>
 
     <hr>
+    <div id= left>
     <h2>Data:</h2>
     <ul>
         <li>Architecture: <span id="info1" class="blue"></span> </li>
         <li>Platform <span id="info2" class="blue"></span></li>
         <li>Directory: <span id="info3" class="blue"></span></li>
+        <li>Node Version: <span id="info4" class="blue"></span></li>
+        <li>Chrome Version: <span id="info5" class="blue"></span></li>
+        <li>Electron Version: <span id="info6" class="blue"></span></li>
         
     </ul>
     <h2>Users conected:</h2>
-    <ul>
-        <li>Architecture: <span id="info1" class="blue"></span> </li>
-        <li>Platform <span id="info2" class="blue"></span></li>
-        <li>Directory: <span id="info3" class="blue"></span></li>
-        
-    </ul>
-    <hr>
-    <p>Messages:</p>
+        <p id="users"></p>
+    <h2> Url:</h2>
+        <p id="ip_dir"></p>
+
+    <h2>QR Code:</h2>
+        <img src=" " id="qr">
+</div>
+<div id="right">
     <p>Print:  <span id='print' class="red"></span> </p>
     <p>   <input type="button" value="Test" id="btn_test"> </p>
    <p>Display:</p>
     <p id="display"></p>
+</div>
 </body>
 </html>
