@@ -1,19 +1,6 @@
-{
-    "usuarios":[{
-      "nickname":"Hermione",
-      "tipo":"root",
-      "nombre":"Elena del Río",
-      "password": "1234",
-      "email": "elenadelriourjc@gmail.com"
-    },
-    {
-        "nickname":"Voldemort",
-        "tipo":"normal",
-        "nombre":"María del Río",
-        "password": "6789",
-        "email": "mdelriogalera@gmail.com"
-    }],
-    "productos":[
+[
+
+    {"productos":[
       {
         "nombre":"Harry's Wand",
         "descripcion":"Phoenix feather core",
@@ -50,8 +37,24 @@
         "precio":"7 Galeones",
         "stock": "19"
       }
-    ],
-    "pedidos":[
+    ]},
+    { "usuarios":[
+      {
+        "nickname":"Hermione",
+        "tipo":"root",
+        "nombre":"Elena del Río",
+        "password": "1234",
+        "email": "elenadelriourjc@gmail.com"
+    },
+    {
+        "nickname":"Voldemort",
+        "tipo":"normal",
+        "nombre":"María del Río",
+        "password": "6789",
+        "email": "mdelriogalera@gmail.com"
+    }
+    ]},
+   { "pedidos":[
       {
         "nickname": "Voldemort",
         "direccion": "Avenida principal, Hogsmeade",
@@ -66,5 +69,5 @@
         "productos":"Hermione's Wand",
         "importe": "7 Galeones"
       }
-    ]
-  }
+    ]}
+]

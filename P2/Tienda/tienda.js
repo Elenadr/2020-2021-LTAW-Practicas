@@ -2,7 +2,7 @@
 const http = require('http');
 const fs = require('fs');
 const url = require('url');
-const querystring = require('querystring');
+
 
 //Constantes
 const PUERTO = 9000;
@@ -21,11 +21,23 @@ const FORMERROR = fs.readFileSync('pages/form_error.html','utf-8');
 const LOGOUT = fs.readFileSync('pages/logout.html','utf-8');
 const CART = fs.readFileSync('pages/cart.html','utf-8');
 
+const FICHJSON ='tienda.json';
+//-- Leer el fichero JSON
+const  tienda_json = fs.readFileSync(FICHJSON);
+//-- Crear la estructura tienda a partir del contenido del fichero
+const tienda = JSON.parse(tienda_json);
 
-//-- Leer fichero JSON con los productos
-const PRODUCTOS_JSON = fs.readFileSync('tienda.json');
-//-- Obtener el array de productos
+//-- Crear una lista de productos disponibles.
+let productos_disp = [];
+let product_list = [];
 
+
+
+
+
+let busqueda = "";
+//-- Nombre del fichero JSON de salida
+const FICHERO_JSON_OUT = "resultado.json";
 const mime = {
   'html' : 'text/html',
   'css'  : 'text/css',
@@ -102,6 +114,7 @@ function get_cart(req) {
     return cart || null;
   }
 }
+
 const server = http.createServer((req, res)=>{
   //-- Leer la Cookie recibida y mostrarla en la consola
 
@@ -119,7 +132,7 @@ const server = http.createServer((req, res)=>{
     //-- Por defecto entregar main
     let content_type = mime["html"];
     let content = MAIN.replace("HTML_EXTRA", `<i class="fas fa-user"></i>`+ login + "</p>");
-    let productos = "";
+
     //-- Obtener le usuario que ha accedido
     //-- null si no se ha reconocido
 
@@ -158,20 +171,27 @@ const server = http.createServer((req, res)=>{
       content=RON;
     }else if(myURL.pathname == '/voldemort_v'){
       content=VOLDEMORT;
-    }else if(myURL.pathname == 'productos'){
-      console.log("Peticion de Productos!")
-      content_type = mime["json"];
+
     }else if(myURL.pathname == 'harry_v/cart'){
 
       console.log('harry');
-    }else if(myURL.pathname == '/formulario'){
+    }else if(myURL.pathname == '/formulario.html'){
       if(user){
         content = LOGOUT;
         console.log('Ya estamos log');
       }else{
         content = FORMULARIO;
       }
-
+    }else if(myURL.pathname == '/buscar'){
+      tienda[0]["productos"].forEach((element, index)=>{
+        console.log("Producto " + (index + 1) + ": " + element.nombre +
+                    ", Stock: " + element.stock + ", Precio: " + element.precio 
+                    + ", Descripcion: " + element.descripcion);
+        productos_disp.push([element.nombre, element.descripcion, element.stock, 
+                             element.precio, element.descripcion]);
+        product_list.push(element.nombre);
+      });
+      console.log();
     }else if(myURL.pathname == '/procesar'){
 
       content_type = "text/html";
@@ -190,26 +210,43 @@ const server = http.createServer((req, res)=>{
         content=FORMERROR;
 
       }
+    }else if(myURL.pathname == '/cart') {
+      let empty = "";
+      content=CART;
+        content = content.replace("EMPTY", cart);
+  
     }else if(myURL.pathname == '/cart_harry'){
       content = HARRY;
-      if (shopcart == "") {
-        shopcart = "cart=harrys-wand";
-        res.setHeader('Set-Cookie', shopcart);
+      if(user==null){
+        content = FORMULARIO; 
       }else{
-        shopcart = shopcart + ",harrys-wand";
-        res.setHeader('Set-Cookie', shopcart);
+        if (shopcart == "") {
+          shopcart = "cart=harrys-wand";
+          res.setHeader('Set-Cookie', shopcart);
+        }else{
+          shopcart = shopcart + ",harrys-wand";
+          res.setHeader('Set-Cookie', shopcart);
+        }
       }
+
     }else if(myURL.pathname == '/cart_hermione'){
       content = HERMIONE;
-      if (shopcart == "") {
-        shopcart = "cart=hermiones-wand";
-        res.setHeader('Set-Cookie', shopcart);
+      if(user==null){
+        content = FORMULARIO; 
       }else{
-        shopcart = shopcart + ",hermiones-wand";
-        res.setHeader('Set-Cookie', shopcart);
+        if (shopcart == "") {
+          shopcart = "cart=hermiones-wand";
+          res.setHeader('Set-Cookie', shopcart);
+        }else{
+          shopcart = shopcart + ",hermiones-wand";
+          res.setHeader('Set-Cookie', shopcart);
+        }
       }
     }else if(myURL.pathname == '/cart_dumbledore'){
       content = DUMBLEDORE;
+      if(user==null){
+        content = FORMULARIO; 
+      }else{
       if (shopcart == "") {
         shopcart = "cart=dumbledores-wand";
         res.setHeader('Set-Cookie', shopcart);
@@ -217,33 +254,111 @@ const server = http.createServer((req, res)=>{
         shopcart = shopcart + ",dumbledores-wand";
         res.setHeader('Set-Cookie', shopcart);
       }
+    }
     }else if(myURL.pathname == '/cart_voldemort'){
       content = VOLDEMORT;
-      if (shopcart == "") {
-        shopcart = "cart=voldemorts-wand";
-        res.setHeader('Set-Cookie', shopcart);
+      if(user==null){
+        content = FORMULARIO; 
       }else{
-        shopcart = shopcart + ",voldemorts-wand";
-        res.setHeader('Set-Cookie', shopcart);
+        if (shopcart == "") {
+          shopcart = "cart=voldemorts-wand";
+          res.setHeader('Set-Cookie', shopcart);
+        }else{
+          shopcart = shopcart + ",voldemorts-wand";
+          res.setHeader('Set-Cookie', shopcart);
+        }
       }
     }else if(myURL.pathname == '/cart_sirius'){
       content = SIRIUS;
-      if (shopcart == "") {
-        shopcart = "cart=sirius-wand";
-        res.setHeader('Set-Cookie', shopcart);
+      if(user==null){
+        content = FORMULARIO; 
       }else{
-        shopcart = shopcart + ",sirius-wand";
-        res.setHeader('Set-Cookie', shopcart);
+        if (shopcart == "") {
+          shopcart = "cart=sirius-wand";
+          res.setHeader('Set-Cookie', shopcart);
+        }else{
+          shopcart = shopcart + ",sirius-wand";
+          res.setHeader('Set-Cookie', shopcart);
+        }
       }
     }else if(myURL.pathname == '/cart_ron'){
       content = RON;
-      if (shopcart == "") {
-        shopcart = "cart=ronss-wand";
-        res.setHeader('Set-Cookie', shopcart);
+      if(user==null){
+        content = FORMULARIO; 
       }else{
-        shopcart = shopcart + ",rons-wand";
-        res.setHeader('Set-Cookie', shopcart);
+        if (shopcart == "") {
+          shopcart = "cart=ronss-wand";
+          res.setHeader('Set-Cookie', shopcart);
+        }else{
+          shopcart = shopcart + ",rons-wand";
+          res.setHeader('Set-Cookie', shopcart);
+        }
       }
+    }else if(myURL.pathname == '/productos'){
+          console.log("Peticion de Productos!")
+          content_type = mime["json"];
+
+        //-- Leer los parámetros
+        let param1 = myURL.searchParams.get('param1');
+
+        //-- Convertimos los caracteres alphanumericos en string
+        param1 = param1.toUpperCase();
+
+        console.log("  Param: " +  param1);
+
+        //-- Se construye nuevo Array de resultado de busquedas
+        let result = [];
+
+        //-- Para ello
+        //-- Recorremos todos los productos de la base de datos
+        //-- Y los que cuadren, se añaden al array
+        for (let prod of productos) {
+            //-- Pasar a mayúsculas
+            prodU = prod.toUpperCase();
+
+            //-- Si el producto comienza por lo indicado en el parametro
+            //-- meter este producto en el array de resultados
+            if (prodU.startsWith(param1)) {
+                result.push(prod);
+                busqueda = prod;
+            }
+        }
+        //-- Imprimimos el aray de resultado de busquedas
+        console.log(result);
+        busqueda = result;
+        //-- Pasamos el resultado a formato JSON con stringify
+        content = JSON.stringify(result);
+        return
+    }else if(myURL.pathname == '/search'){
+      if (busqueda[0] == 'Harrys Wand') {
+        content = HARRY;
+        busqueda = "";
+
+      }else if(busqueda[0] == 'Hermiones Wand'){
+        content = HERMIONE;
+        busqueda = "";
+      }else if(busqueda[0] == 'Dumbledores Wand'){
+
+        content = DUMBLEDORE;
+        busqueda = "";
+      }else if(busqueda[0] == 'Voldemorts Wand'){
+
+        content = VOLDEMORT;
+        busqueda = "";
+      }else if(busqueda[0] == 'Sirius Wand'){
+
+        content = SIRIUS;
+        busqueda = "";
+      }else if(busqueda[0] == 'Rons Wand'){
+
+        content = RON;
+        busqueda = "";
+      }else{
+        content = MAIN;
+        content = MAIN.replace("HTML_EXTRA", `<i class="fas fa-user-check"></i>` + user + "</p>");
+        busqueda = "";
+      }
+
     }else{
       const objetourl= url.parse(req.url);
       let camino = 'pages'+ objetourl.pathname;
