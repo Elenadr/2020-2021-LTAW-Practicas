@@ -118,6 +118,11 @@
      margin-left: auto;
    }
 
+   form{
+     width: 200px;
+     text-align: center;
+     
+   }
 
    button{
     font-family: "LUMOS";

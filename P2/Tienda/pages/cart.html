@@ -3,60 +3,45 @@
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <link rel="stylesheet" href="articulos.css">
-    <title> Ron's Wand | Olivander's | Diagon Alley</title>
+    <link rel="stylesheet" href="stylescart.css">
+    <title>Your shopping-cart</title>
     <link rel="icon" href="https://raw.githubusercontent.com/Elenadr/2020-2021-LTAW-Practicas/main/P1/wiki/icon.ico">
+ 
+	
 </head>
 
 <body>
+    
     <!-- Div de cabecera. Se mantiene siempre. Es el 'dni' de mi página-->
     <div id="header">
         <div id="upheader"> 
-            <a href="formulario.html"><p><i class="fas fa-user"></i> Login</p></a>
+            <div id="upheaderleft">
+            <a href="/"><p><i class="fas fa-home"></i> Home</p></a>            
+
             <p>|</p>
-            <a href="/"><p><i class="fas fa-home"></i> Home</p></a>
+            <a href="formulario.html"><p> HTML_EXTRA  </p></a> 
             <p>|</p>
-            <a href="cart.html"><p><i class="fas fa-shopping-cart"></i>Cart</p></a>
-            <p>|</p>
-            <a href="fail.html"><p><i class="fas fa-search"></i>Search</p></a>
+        </div>
 
         </div>
-        <img class= image src="https://github.com/Elenadr/2020-2021-LTAW-Practicas/blob/main/P1/wiki/logo.png?raw=true" >
-        <h3>Olivander's</h3>
-    </div>
 
+        <img class= image src="https://raw.githubusercontent.com/Elenadr/2020-2021-LTAW-Practicas/main/P1/wiki/logo.png" >
+        <h3>Diagon Alley</h3>
+    </div>
     <!-- Div de cuerpo. Donde se contiene todo lo que no es cabecera ni footer.-->
-    
-       <!-- Div de particles. Es para el fondo en movimiento, se aplica a todo el cuerpo-->
-       <div id="particles-js">
-        <!-- Div de subtiendas. Para aplicarles la misma conf y poner en linea-->
-
-        <div id="articulo">
-            <div class="articulo-imagen">
-                <div class="articulo-titulo"> <h6> Ron's Wand </h6></div>
-            <br>
-            
-                <img class= image src="https://raw.githubusercontent.com/Elenadr/2020-2021-LTAW-Practicas/main/P2/wiki/vron.png" width="500px">
-            </div>
-           
-            <div class="articulo-descripción"> 
-                <div class="articulo-precio"><h6> <i class="fas fa-coins"></i> 7 Galeones</h6> </div>
-                <br>
-                <ul>
-                 <li>The wand that chose Ron Weasley.</li>
-                 <li>The wand is crafted from willow.</li>
-                 <li>Unicorn hair core.</li>
-                 <li>Approximately 35.5cm in length. </li>
-                
-                </ul>
-                <p id="note">Please note, this wand is a collectible item and not a toy.</p> 
-                <form action="/cart_ron" method="GET">
-                    <button id="cart">Add to Cart</button>
-                    
-                </form>
-            </div>
+    <div id="particles-js"></div>
+        <!-- Div de particles. Es para el fondo en movimiento, se aplica a todo el cuerpo-->
+        <div id="title">
+            <h4>Your order...</h4>
         </div>
-    </div>
+        
+        <h1>Review your cart</h1>
+        <hr>
+        EMPTY
+        
+        <hr>
+           
+
 <!-- Div de footer. Se mantiene siempre.-->
 <footer class="footer-distributed">
 
