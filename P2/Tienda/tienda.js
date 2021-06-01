@@ -357,10 +357,31 @@ const server = http.createServer((req, res)=>{
       content=CART;
 
     }else if(myURL.pathname == '/pedido'){
-      console.log('koko');
-      content = PEDIDO;
-      let pedido = get_cart(req);
-      content.replace("PRODUCTS",pedido);
+
+      if (user) {
+        content=PEDIDO;
+        buy = get_cart(req);
+        direction = myURL.searchParams.get('direccion');
+        card = myURL.searchParams.get('tarjeta');
+        pedido = {
+          "usuario":user,
+          "direccion":direction,
+          "tarjeta":card,
+          "compra":buy,
+          "importe":price
+        };
+        lista_json = fs.readFileSync("tienda.json");
+        lista = JSON.parse(lista_json);
+        lista["pedidos"].push(pedido);
+        fs.writeFileSync("tienda.json", JSON.stringify(lista));
+        pedido["compra"].forEach(element => {
+          sold += "- " + element + "<br>";
+        });
+        change_2 = fs.readFileSync(content, 'utf-8');
+      } else {
+        content=MAIN;
+      }
+      
     }else if(myURL.pathname == '/productos'){
           console.log("Peticion de Productos!")
           content_type = mime["json"];

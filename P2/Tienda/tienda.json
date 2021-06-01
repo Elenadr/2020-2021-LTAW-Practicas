@@ -56,17 +56,17 @@
     ]},
    { "pedidos":[
       {
-        "nickname": "Voldemort",
+        "usuario": "Voldemort",
         "direccion": "Avenida principal, Hogsmeade",
         "tarjeta": "9812481394",
-        "productos":"Harry's Wand, Dumbledore's Wand, Voldemort's Wand",
+        "compra":"Harry's Wand, Dumbledore's Wand, Voldemort's Wand",
         "importe":"21 galeones"
       },
       {
-        "nickname": "Hermione",
+        "usuario": "Hermione",
         "direccion": "Callejón Diagon, Cajero Armazón",
         "tarjeta": "4368719280",
-        "productos":"Hermione's Wand",
+        "compra":"Hermione's Wand",
         "importe": "7 Galeones"
       }
     ]}
