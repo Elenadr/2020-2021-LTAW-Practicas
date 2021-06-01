@@ -425,7 +425,8 @@ const server = http.createServer((req, res)=>{
         content = MAIN.replace("HTML_EXTRA", `<i class="fas fa-user-check"></i>` + user + "</p>");
         busqueda = "";
       }
-
+    }else if (myURL.pathname == '/fin'){
+      content = FIN;
     }else{
       const objetourl= url.parse(req.url);
       let camino = 'pages'+ objetourl.pathname;
