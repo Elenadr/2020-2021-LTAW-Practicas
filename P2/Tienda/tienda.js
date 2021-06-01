@@ -6,7 +6,7 @@ const url = require('url');
 
 //Constantes
 const PUERTO = 9000;
-let shopcart = "";
+
 const MAIN = fs.readFileSync('pages/main.html','utf-8');
 const FAIL = fs.readFileSync('pages/fail.html','utf-8');
 const HARRY = fs.readFileSync('pages/harry_v.html','utf-8');
@@ -30,7 +30,7 @@ const  tienda_json = fs.readFileSync(FICHJSON);
 const tienda = JSON.parse(tienda_json);
 let productos_disp = [];
 let product_list = [];
-
+let shopcart = "";
 tienda[0]["productos"].forEach((element, index)=>{
   console.log("Producto " + (index + 1) + ": " + element.nombre +
               ", Stock: " + element.stock + ", Precio: " + element.precio);
