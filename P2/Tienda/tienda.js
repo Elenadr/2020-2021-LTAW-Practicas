@@ -20,6 +20,7 @@ const RESPUESTA = fs.readFileSync('pages/respuesta.html','utf-8');
 const FORMERROR = fs.readFileSync('pages/form_error.html','utf-8');
 const LOGOUT = fs.readFileSync('pages/logout.html','utf-8');
 const CART = fs.readFileSync('pages/cart.html','utf-8');
+const FIN =fs.readFileSync('pages/fin.html','utf-8');
 
 const PEDIDO = fs.readFileSync('pages/pedido.html', 'utf-8');
 const FICHJSON ='tienda.json';
