@@ -276,11 +276,11 @@ p{
 
 /* Estilo del pie de página */
 footer{
-  position: fixed;
+
   bottom: 0;
 }
 @media (max-height:700px){
-  footer { position: static; }
+
   header { padding-top:40px; }
 }
 
@@ -433,11 +433,10 @@ font-style: normal;
   .footer-distributed .footer-left,
   .footer-distributed .footer-center,
   .footer-distributed .footer-right{
-      display: block;
+      display: flex;
       width: 100%;
       margin-bottom: 0px;
       text-align: center;
-  
   }
 
   .footer-distributed .footer-center i{
