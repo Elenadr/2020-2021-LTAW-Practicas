@@ -165,14 +165,31 @@ h3 {
        color: white;
        
      }
-  h2{
+  h2 {
     font-family: "LUMOS";
     font-size: 50px;
     color:#a85;
     margin-bottom: 30px;
     text-align: center;
   }
+  h1 {
+    font-family: "LUMOS";
+    font-size: 30px;
+    color:white;
+    margin-bottom: 30px;
+    text-align: justify;
+    margin-left: 5%;
+  }
+h4{
+    text-align: justify;
+    margin-left: 5%;
+    font-family: "LUMOS";
+    font-size: 20px;
+    color: white;
+    margin-bottom: 0%;
+    
 
+}
   button{
     font-family: "LUMOS";
     background-color: rgb(163, 131, 83);

@@ -292,6 +292,41 @@
      position: fixed;
      bottom: 0;
    }
+   form{
+    position: relative;
+    font-size   : 100%;
+    color: white;
+    font-family: "LUMOS";
+    font-size: 40px;
+    text-align: center;
+    width  : 50%;
+    height : 400px;
+    margin : 0 auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+   button{
+    font-family: "LUMOS";
+    background-color: rgb(163, 131, 83);
+    margin-top: 5%;
+    margin-bottom: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    padding: 3px 10px;
+    text-decoration: none;
+    font-size: 40px;
+    border-radius: 15px;
+    display:inline-block;
+    border-width: 3px;
+    border-color: white
+  }
+  button:hover {
+    background-color: rgb(219, 219, 219);
+    color: #a85 ;
+    border-color:  #a85;
+    border-width: 3px;
+  }
    @media (max-height:700px){
      footer { position: static; }
      header { padding-top:40px; }

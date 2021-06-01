@@ -21,20 +21,22 @@ const FORMERROR = fs.readFileSync('pages/form_error.html','utf-8');
 const LOGOUT = fs.readFileSync('pages/logout.html','utf-8');
 const CART = fs.readFileSync('pages/cart.html','utf-8');
 
+const PEDIDO = fs.readFileSync('pages/pedido.html', 'utf-8');
 const FICHJSON ='tienda.json';
 //-- Leer el fichero JSON
 const  tienda_json = fs.readFileSync(FICHJSON);
 //-- Crear la estructura tienda a partir del contenido del fichero
 const tienda = JSON.parse(tienda_json);
-
-//-- Crear una lista de productos disponibles.
 let productos_disp = [];
 let product_list = [];
 
-
-
-
-
+tienda[0]["productos"].forEach((element, index)=>{
+  console.log("Producto " + (index + 1) + ": " + element.nombre +
+              ", Stock: " + element.stock + ", Precio: " + element.precio);
+  productos_disp.push([element.nombre, element.descripcion, element.stock, 
+                      element.precio]);
+  product_list.push(element.nombre);
+});
 let busqueda = "";
 //-- Nombre del fichero JSON de salida
 const FICHERO_JSON_OUT = "resultado.json";
@@ -80,41 +82,100 @@ function get_user(req) {
   }
 }
 
-function get_cart(req) {
 
-  //-- Leer la Cookie recibida
+//-- Obtener el carrito
+function get_cart(req){
+  //-- Leer la cookie recibida
   const cookie = req.headers.cookie;
 
-  //-- Hay cookie
-  if (cookie) {
-    
+  if (cookie){
     //-- Obtener un array con todos los pares nombre-valor
     let pares = cookie.split(";");
-    
-    //-- Variable para guardar el carrito
-    let cart;
 
+    //-- Variables para guardar los datos del carrito
+    let shopcart;
+    let harry = '';
+    let cart_harry = 0;
+    let hermione = '';
+    let cart_hermione = 0;
+    let dumbledore = '';
+    let cart_dumbledore = 0;
+    let voldemort = '';
+    let cart_voldemort = 0;
+    let sirius = '';
+    let cart_sirius = 0;
+    let ron = '';
+    let cart_ron = 0;
     //-- Recorrer todos los pares nombre-valor
     pares.forEach((element, index) => {
-
-      //-- Obtener los nombres y valores por separado
+      //-- Obtener los nombre y los valores por separado
       let [nombre, valor] = element.split('=');
 
-      //-- Leer el usuario
-      //-- Solo si el nombre es 'shopcart'
+      //-- Si nombre = carrito registramos los articulos
       if (nombre.trim() === 'shopcart') {
-        valor.split(",").forEach(producto => {
-          cart.push(producto);
+        productos = valor.split(':');
+        productos.forEach((producto) => {
+          if (producto == 'harry'){
+            if (cart_harry == 0) {
+              harry = productos_disp[0][0];
+            }
+            cart_harry += 1;
+          }else if (producto == 'hermione'){
+            if (cart_hermione == 0){
+              hermione = productos_disp[1][0];
+            }
+            cart_hermione += 1;
+          }else if (producto == 'dumbledore'){
+            if (cart_dumbledore == 0){
+              dumbledore = productos_disp[2][0];
+            }
+            cart_dumbledore += 1;
+          }else if (producto == 'voldemort'){
+            if (cart_voldemort == 0){
+             voldemort = productos_disp[3][0];
+            }
+            cart_voldemort += 1;
+          }else if (producto == 'sirius'){
+            if (cart_sirius == 0){
+             sirius = productos_disp[4][0];
+            }
+            cart_sirius += 1;
+          }else if (producto == 'ron'){
+            if (cart_ron == 0){
+             ron = productos_disp[5][0];
+            }
+            cart_ron += 1;
+          }
+
         });
+
+        if (cart_harry != 0) {
+          harry += ' x ' + cart_harry;
+        }
+        if (cart_hermione != 0) {
+          hermione += ' x ' + cart_hermione;
+        }
+        if (cart_dumbledore != 0) {
+          dumbledore += ' x ' + cart_dumbledore;
+        }
+        if (cart_voldemort != 0) {
+          voldemort += ' x ' + cart_voldemort;
+        }
+        if (cart_sirius != 0) {
+          sirius += ' x ' + cart_sirius;
+        }
+        if (cart_ron != 0) {
+          ron += ' x ' + cart_ron;
+        }
+        shopcart = harry + '<br>' + hermione+ '<br>' + dumbledore 
+        + '<br>' + voldemort + '<br>' + sirius+ '<br>' + ron ;
       }
     });
 
-    //-- Si la variable cart no está asignada
-    //-- se devuelve null
-    return cart || null;
+    //-- Si esta vacío se devuelve null
+    return shopcart || null;
   }
 }
-
 const server = http.createServer((req, res)=>{
   //-- Leer la Cookie recibida y mostrarla en la consola
 
@@ -132,7 +193,7 @@ const server = http.createServer((req, res)=>{
     //-- Por defecto entregar main
     let content_type = mime["html"];
     let content = MAIN.replace("HTML_EXTRA", `<i class="fas fa-user"></i>`+ login + "</p>");
-
+    let productos = "";
     //-- Obtener le usuario que ha accedido
     //-- null si no se ha reconocido
 
@@ -158,6 +219,7 @@ const server = http.createServer((req, res)=>{
         //-- Mostrar el enlace a la página de login
         content = MAIN.replace("HTML_EXTRA", `<i class="fas fa-user"></i>`+ login + "</p>");
       }
+
     }else if(myURL.pathname == '/harry_v'){
   
       content=HARRY;
@@ -210,10 +272,6 @@ const server = http.createServer((req, res)=>{
         content=FORMERROR;
 
       }
-    }else if(myURL.pathname == '/cart') {
-      let empty = "";
-      content=CART;
-        content = content.replace("EMPTY", cart);
   
     }else if(myURL.pathname == '/cart_harry'){
       content = HARRY;
@@ -294,6 +352,14 @@ const server = http.createServer((req, res)=>{
           res.setHeader('Set-Cookie', shopcart);
         }
       }
+    }else if(myURL.pathname == '/cart.html') {
+      content=CART;
+
+    }else if(myURL.pathname == '/pedido'){
+      console.log('koko');
+      content = PEDIDO;
+      let pedido = get_cart(req);
+      content.replace("PRODUCTS",pedido);
     }else if(myURL.pathname == '/productos'){
           console.log("Peticion de Productos!")
           content_type = mime["json"];
@@ -312,15 +378,15 @@ const server = http.createServer((req, res)=>{
         //-- Para ello
         //-- Recorremos todos los productos de la base de datos
         //-- Y los que cuadren, se añaden al array
-        for (let prod of productos) {
+        for (let prod of tienda["productos"]) {
             //-- Pasar a mayúsculas
             prodU = prod.toUpperCase();
 
             //-- Si el producto comienza por lo indicado en el parametro
             //-- meter este producto en el array de resultados
             if (prodU.startsWith(param1)) {
-                result.push(prod);
-                busqueda = prod;
+                result.push(prod["nombre"]);
+        
             }
         }
         //-- Imprimimos el aray de resultado de busquedas

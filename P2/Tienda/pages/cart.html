@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <link rel="stylesheet" href="stylescart.css">
+    <link rel="stylesheet" href="logout.css">
     <title>Your shopping-cart</title>
     <link rel="icon" href="https://raw.githubusercontent.com/Elenadr/2020-2021-LTAW-Practicas/main/P1/wiki/icon.ico">
  
@@ -14,31 +14,46 @@
     
     <!-- Div de cabecera. Se mantiene siempre. Es el 'dni' de mi página-->
     <div id="header">
-        <div id="upheader"> 
-            <div id="upheaderleft">
-            <a href="/"><p><i class="fas fa-home"></i> Home</p></a>            
 
-        </div>
-
-        </div>
-
-        <img class= image src="https://raw.githubusercontent.com/Elenadr/2020-2021-LTAW-Practicas/main/P1/wiki/logo.png" >
+        <img class= image src="https://github.com/Elenadr/2020-2021-LTAW-Practicas/blob/main/P1/wiki/logo.png?raw=true" >
         <h3>Diagon Alley</h3>
     </div>
-    <!-- Div de cuerpo. Donde se contiene todo lo que no es cabecera ni footer.-->
+
     <div id="particles-js"></div>
-        <!-- Div de particles. Es para el fondo en movimiento, se aplica a todo el cuerpo-->
-        <div id="title">
-            <h4>Your order...</h4>
-        </div>
+    <!--- Formulario -->
+    <div id="relleno">
+        <p>Do you want to finish yout purchase?</p>
+
         
-        <h1>Review your cart</h1>
-        <hr>
-        EMPTY
+<div id="stay">
+    <a href="/pedido.html">
+            <img class= image width="400px" src="https://raw.githubusercontent.com/Elenadr/2020-2021-LTAW-Practicas/main/P2/wiki/happy.gif" >
+       
+<br>
+            <button id="in"> Yes. Finish and Pay. </button>
+        </a>
 
-        <hr>
-           
+        </div>
+        <div id="singout">
+<a href="/">
+            <img class= image width="370px" src="https://raw.githubusercontent.com/Elenadr/2020-2021-LTAW-Practicas/main/P2/wiki/logout.webp" >
+<br>
+            <button id="out"> Continue Shopping </button>
 
+        </div>
+    </a>
+
+    
+    </div>
+    </div>
+
+
+    
+    <!-- Scripts necesarios para aplicar fondo en mov y configurarlo.-->
+    <script src="particles.js" ></script>
+    <script src="app.js" ></script>
+
+</body>
 <!-- Div de footer. Se mantiene siempre.-->
 <footer class="footer-distributed">
 
@@ -88,5 +103,4 @@
     <!-- Scripts necesarios para aplicar fondo en mov y configurarlo.-->
     <script src="particles.js" ></script>
     <script src="app.js" ></script>
-    </body>
     </html>
